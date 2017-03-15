@@ -7,17 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4872D821E76E00D0077D05F /* addPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4872D811E76E00D0077D05F /* addPersonView.swift */; };
+		D4872D841E76E1D30077D05F /* theGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4872D831E76E1D30077D05F /* theGroups.swift */; };
+		D4872D861E78A4A60077D05F /* groupSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4872D851E78A4A60077D05F /* groupSelect.swift */; };
+		D4C17E8B1E71836B000B2B4B /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C17E8A1E71836B000B2B4B /* People.swift */; };
 		D4FBC5021E0F62E600D5A088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FBC5011E0F62E600D5A088 /* AppDelegate.swift */; };
-		D4FBC5041E0F62E600D5A088 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FBC5031E0F62E600D5A088 /* ViewController.swift */; };
+		D4FBC5041E0F62E600D5A088 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FBC5031E0F62E600D5A088 /* MainScreen.swift */; };
 		D4FBC5071E0F62E600D5A088 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4FBC5051E0F62E600D5A088 /* Main.storyboard */; };
 		D4FBC5091E0F62E600D5A088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4FBC5081E0F62E600D5A088 /* Assets.xcassets */; };
 		D4FBC50C1E0F62E600D5A088 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4FBC50A1E0F62E600D5A088 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D4872D811E76E00D0077D05F /* addPersonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addPersonView.swift; sourceTree = "<group>"; };
+		D4872D831E76E1D30077D05F /* theGroups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = theGroups.swift; sourceTree = "<group>"; };
+		D4872D851E78A4A60077D05F /* groupSelect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupSelect.swift; sourceTree = "<group>"; };
+		D4C17E8A1E71836B000B2B4B /* People.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		D4FBC4FE1E0F62E600D5A088 /* Rotations Prime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rotations Prime.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4FBC5011E0F62E600D5A088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D4FBC5031E0F62E600D5A088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D4FBC5031E0F62E600D5A088 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		D4FBC5061E0F62E600D5A088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4FBC5081E0F62E600D5A088 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4FBC50B1E0F62E600D5A088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -35,6 +43,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D40C9A821E6DA0F80043EB2A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D4872D851E78A4A60077D05F /* groupSelect.swift */,
+				D4FBC5031E0F62E600D5A088 /* MainScreen.swift */,
+				D4872D811E76E00D0077D05F /* addPersonView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D40C9A831E6DA10A0043EB2A /* Controlor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controlor;
+			sourceTree = "<group>";
+		};
+		D40C9A841E6DA11B0043EB2A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D4C17E8A1E71836B000B2B4B /* People.swift */,
+				D4872D831E76E1D30077D05F /* theGroups.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D40C9A851E6DA14A0043EB2A /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				D4FBC5081E0F62E600D5A088 /* Assets.xcassets */,
+				D4FBC50D1E0F62E700D5A088 /* Info.plist */,
+			);
+			name = Extras;
+			sourceTree = "<group>";
+		};
 		D4FBC4F51E0F62E300D5A088 = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +97,13 @@
 		D4FBC5001E0F62E600D5A088 /* Rotations Prime */ = {
 			isa = PBXGroup;
 			children = (
+				D40C9A841E6DA11B0043EB2A /* Model */,
+				D40C9A821E6DA0F80043EB2A /* View */,
+				D40C9A831E6DA10A0043EB2A /* Controlor */,
 				D4FBC5011E0F62E600D5A088 /* AppDelegate.swift */,
-				D4FBC5031E0F62E600D5A088 /* ViewController.swift */,
 				D4FBC5051E0F62E600D5A088 /* Main.storyboard */,
-				D4FBC5081E0F62E600D5A088 /* Assets.xcassets */,
 				D4FBC50A1E0F62E600D5A088 /* LaunchScreen.storyboard */,
-				D4FBC50D1E0F62E700D5A088 /* Info.plist */,
+				D40C9A851E6DA14A0043EB2A /* Extras */,
 			);
 			path = "Rotations Prime";
 			sourceTree = "<group>";
@@ -137,8 +181,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4FBC5041E0F62E600D5A088 /* ViewController.swift in Sources */,
+				D4C17E8B1E71836B000B2B4B /* People.swift in Sources */,
+				D4FBC5041E0F62E600D5A088 /* MainScreen.swift in Sources */,
+				D4872D821E76E00D0077D05F /* addPersonView.swift in Sources */,
 				D4FBC5021E0F62E600D5A088 /* AppDelegate.swift in Sources */,
+				D4872D841E76E1D30077D05F /* theGroups.swift in Sources */,
+				D4872D861E78A4A60077D05F /* groupSelect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +350,7 @@
 				D4FBC5121E0F62E700D5A088 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
