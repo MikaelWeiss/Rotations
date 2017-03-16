@@ -12,6 +12,8 @@ class mainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var isInMain = true
     var isAddingName = false
     
+    var allPeople = ["Mikael", "Grant", "Rachel"]
+    
     @IBAction func BackButton(_ sender: UIBarButtonItem) {
         isAddingName = false
         performSegue(withIdentifier: "BackButtonPressed", sender: UIBarButtonItem())
