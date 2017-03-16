@@ -7,10 +7,76 @@
 //
 
 import UIKit
-
 class addPersonView: UIViewController {
-    @IBOutlet weak var EnterNameTextFeild: UITextField!
+    var isInMain = true
+
+    
+    @IBOutlet weak var EnteredObjectTextFeild: UITextField!
+    
+    @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
+        if isInMain == true {
+            
+            performSegue(withIdentifier: "fromAddToMain", sender: UIBarButtonItem())
+            
+        }else {
+            
+            performSegue(withIdentifier: "FromAddToGroup", sender: UIBarButtonItem())
+            
+        }
+    }
+    
+    // add/save           DONE
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
+        if isInMain == true {
+            
+            let namesObject = UserDefaults.standard.object(forKey: "Names")
+            
+            var names: [String]
+            
+            if let tempItems = namesObject as? [String] {
+                
+                names = tempItems
+                
+                names.append(EnteredObjectTextFeild.text!)
+                
+                print(names)
+                
+            } else {
+                
+                names = [EnteredObjectTextFeild.text!]
+                
+            }
+            
+            UserDefaults.standard.set(names, forKey: "Names")
+            
+            EnteredObjectTextFeild.text = ""
+            
+        }else if isInMain == false {
+            
+            let groupsObject = UserDefaults.standard.object(forKey: "Groups")
+            
+            var groups: [String]
+            
+            if let tempItems = groupsObject as? [String] {
+                
+                groups = tempItems
+                
+                groups.append(EnteredObjectTextFeild.text!)
+                
+                print(groups)
+                
+            } else {
+                
+                groups = [EnteredObjectTextFeild.text!]
+                
+            }
+            
+            UserDefaults.standard.set(groups, forKey: "Groups")
+            
+            EnteredObjectTextFeild.text = ""
+
+            
+        }
         
     }
     

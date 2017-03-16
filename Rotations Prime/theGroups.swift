@@ -8,14 +8,14 @@
 
 import Foundation
 
-class Groups {
-    private var _GroupName: String
+class Groups{
+    private var _GroupName: [String]
     
-    var GroupName: String {
+    var GroupName: [String] {
         return _GroupName
     }
     
-    init(GroupName: String) {
+    init(GroupName: [String]) {
         _GroupName = GroupName
     }
     
