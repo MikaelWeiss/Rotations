@@ -11,8 +11,20 @@ import UIKit
 class mainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var isInMain = true
     var isAddingName = false
+    var canAdd = true
     
     var allPeople = ["Mikael", "Grant", "Rachel"]
+    @IBOutlet weak var addButtonOu: UIBarButtonItem!
+    
+    @IBAction func Lock(_ sender: UIBarButtonItem) {
+        if canAdd == true {
+            addButtonOu.isEnabled = true
+        }else if canAdd == false {
+            
+            addButtonOu.isEnabled = false
+            
+        }
+    }
     
     @IBAction func BackButton(_ sender: UIBarButtonItem) {
         isAddingName = false
@@ -22,9 +34,7 @@ class mainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         isAddingName = true
         performSegue(withIdentifier: "AddPerson", sender: UIBarButtonItem())
     }
-    @IBAction func Lock(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "MainToLock", sender: UIBarButtonItem())
-    }
+    
     @IBOutlet weak var tableview: UITableView!
     
     override func viewDidLoad() {

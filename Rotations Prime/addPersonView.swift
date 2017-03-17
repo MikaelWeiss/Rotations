@@ -13,20 +13,20 @@ class addPersonView: UIViewController {
     
     @IBOutlet weak var EnteredObjectTextFeild: UITextField!
     
-    @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
+    @IBAction func cancelPressed(_ sender: UIButton) {
         if isInMain == true {
             
-            performSegue(withIdentifier: "fromAddToMain", sender: UIBarButtonItem())
+            performSegue(withIdentifier: "FromAddToMain", sender: UIButton())
             
         }else {
             
-            performSegue(withIdentifier: "FromAddToGroup", sender: UIBarButtonItem())
+            performSegue(withIdentifier: "FromAddToGroup", sender: UIButton())
             
         }
     }
     
     // add/save           DONE
-    @IBAction func saveButton(_ sender: UIBarButtonItem) {
+    @IBAction func saveButton(_ sender: UIButton) {
         if isInMain == true {
             
             let namesObject = UserDefaults.standard.object(forKey: "Names")

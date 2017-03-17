@@ -11,18 +11,27 @@ import UIKit
 class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var theGroups: [String] = []
     var isAddingGroup = false
+    var canAdd = true
     
+    @IBOutlet weak var addButtonO: UIBarButtonItem!
     @IBAction func addingButton(_ sender: UIBarButtonItem) {
         isAddingGroup = true
+        performSegue(withIdentifier: "GroupToAdd", sender: UIBarButtonItem())
+    }
+    @IBAction func Lock(_ sender: UIBarButtonItem) {
+        if canAdd == true {
+            addButtonO.isEnabled = true
+        }else if canAdd == false {
+            
+            addButtonO.isEnabled = false
+            
+        }
     }
     
     @IBAction func goToGroupScreenSegue(Segue: UIStoryboardSegue) {
     }
 
     @IBOutlet weak var GroupTableView: UITableView!
-    @IBAction func Lock(_ sender: UIBarButtonItem) {
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

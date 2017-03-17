@@ -31,18 +31,18 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ea6-HK-Tpk" id="btf-oQ-uX8">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="61.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7DP-IK-QFB">
-                                                    <rect key="frame" x="15" y="21" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="20" width="34" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vtf-5Q-tT5">
-                                                    <rect key="frame" x="261" y="21" width="44" height="20.5"/>
+                                                    <rect key="frame" x="261" y="20" width="44" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -73,7 +73,7 @@
                                     <action selector="BackButton:" destination="BYZ-38-t0r" id="KEy-dO-XJX"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Lock" id="n0G-zm-4XK">
+                            <barButtonItem image="Unlocked" id="n0G-zm-4XK">
                                 <connections>
                                     <action selector="Lock:" destination="BYZ-38-t0r" id="hPF-hb-AWf"/>
                                 </connections>
@@ -86,16 +86,80 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButtonOu" destination="P0c-ce-E7N" id="0oB-zs-1Hi"/>
                         <outlet property="tableview" destination="gGl-fH-7lX" id="wc4-rk-DHp"/>
-                        <segue destination="YFa-fa-BEW" kind="show" identifier="AddPerson" id="bHS-oP-H8u"/>
                         <segue destination="OOd-bO-leR" kind="show" identifier="MainToLock" id="EeQ-ik-zqZ"/>
                         <segue destination="eUd-My-XnP" kind="unwind" identifier="BackButtonPressed" unwindAction="goToGroupScreenSegueWithSegue:" id="pwd-bd-kdP"/>
+                        <segue destination="eIz-gm-FLx" kind="presentation" identifier="AddPerson" modalPresentationStyle="formSheet" modalTransitionStyle="flipHorizontal" id="3UQ-YV-1eL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="eUd-My-XnP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3821.25" y="-10"/>
+        </scene>
+        <!--Add Person View-->
+        <scene sceneID="4fw-eI-Jch">
+            <objects>
+                <viewController id="eIz-gm-FLx" customClass="addPersonView" customModule="Rotations_Prime" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TPm-to-gPK"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Qo-1z-924"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lia-eW-vif">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pz7-uV-HPE">
+                                <rect key="frame" x="16" y="20" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="egY-79-wqY"/>
+                                    <constraint firstAttribute="width" constant="50" id="wSM-35-mOW"/>
+                                </constraints>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelPressed:" destination="eIz-gm-FLx" eventType="touchUpInside" id="n9c-aP-3zh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6w-ya-dMQ">
+                                <rect key="frame" x="254" y="20" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="XFU-9x-R7o"/>
+                                    <constraint firstAttribute="width" constant="50" id="z8W-LN-UMV"/>
+                                </constraints>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="eIz-gm-FLx" eventType="touchUpInside" id="lWQ-gF-Hbk"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EiT-QV-siE">
+                                <rect key="frame" x="16" y="78" width="288" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="g6w-ya-dMQ" firstAttribute="trailing" secondItem="Lia-eW-vif" secondAttribute="trailingMargin" id="5Pc-X4-FKG"/>
+                            <constraint firstItem="EiT-QV-siE" firstAttribute="leading" secondItem="Lia-eW-vif" secondAttribute="leadingMargin" id="Rpb-lA-HCF"/>
+                            <constraint firstItem="g6w-ya-dMQ" firstAttribute="top" secondItem="TPm-to-gPK" secondAttribute="bottom" id="bVT-d6-pya"/>
+                            <constraint firstItem="Pz7-uV-HPE" firstAttribute="top" secondItem="TPm-to-gPK" secondAttribute="bottom" id="eS6-N1-Cao"/>
+                            <constraint firstItem="Pz7-uV-HPE" firstAttribute="leading" secondItem="Lia-eW-vif" secondAttribute="leadingMargin" id="gdb-z3-gVE"/>
+                            <constraint firstItem="EiT-QV-siE" firstAttribute="trailing" secondItem="Lia-eW-vif" secondAttribute="trailingMargin" id="h15-CK-arO"/>
+                            <constraint firstItem="EiT-QV-siE" firstAttribute="top" secondItem="g6w-ya-dMQ" secondAttribute="bottom" constant="8" id="uaf-zV-hVN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="EnteredObjectTextFeild" destination="EiT-QV-siE" id="z1l-vu-G2S"/>
+                        <segue destination="kLS-X1-uCQ" kind="unwind" identifier="FromAddToMain" unwindAction="exitSegueWithSegue:" id="iNa-Zh-qXy"/>
+                        <segue destination="kLS-X1-uCQ" kind="unwind" identifier="FromAddToGroup" unwindAction="goToGroupScreenSegueWithSegue:" id="e1V-Bt-Fig"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q45-34-61M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="kLS-X1-uCQ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4556.25" y="-16.25"/>
         </scene>
         <!--Groups-->
         <scene sceneID="6xW-0t-rJl">
@@ -117,11 +181,11 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GiB-5Q-KKk" id="gul-lR-LVp">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="61.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qgN-Ss-Jhm">
-                                                    <rect key="frame" x="15" y="0.0" width="290" height="61.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="61"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -146,25 +210,23 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Groups" id="hWR-vc-RFz">
-                        <leftBarButtonItems>
-                            <barButtonItem systemItem="edit" id="vIa-0f-yzn" userLabel="Lock"/>
-                            <barButtonItem title="Lock" id="jwS-K0-UaR">
-                                <connections>
-                                    <action selector="Lock:" destination="PNI-d4-kls" id="DdV-Km-Okk"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" image="Unlocked" id="jwS-K0-UaR" userLabel="Lock">
+                            <connections>
+                                <action selector="Lock:" destination="PNI-d4-kls" id="Cfj-ii-ecr"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="l9s-7b-hZU">
                             <connections>
                                 <action selector="addingButton:" destination="PNI-d4-kls" id="LZd-iy-AcB"/>
-                                <segue destination="YFa-fa-BEW" kind="show" identifier="GroupsToAdd" id="EUY-0a-qF8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="GroupTableView" destination="1fx-wC-EO1" id="hkf-JA-UCZ"/>
+                        <outlet property="addButtonO" destination="l9s-7b-hZU" id="Ewl-05-MdO"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="GroupToMain" id="xY3-1q-dsq"/>
                         <segue destination="OOd-bO-leR" kind="show" identifier="GroupToLock" id="Zt3-02-civ"/>
+                        <segue destination="eIz-gm-FLx" kind="presentation" identifier="GroupToAdd" modalPresentationStyle="formSheet" modalTransitionStyle="flipHorizontal" id="a46-YH-bXz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xB2-N4-4df" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -189,58 +251,6 @@
             </objects>
             <point key="canvasLocation" x="3103" y="854"/>
         </scene>
-        <!--Add Person-->
-        <scene sceneID="AtL-lY-gy5">
-            <objects>
-                <viewController id="YFa-fa-BEW" customClass="addPersonView" customModule="Rotations_Prime" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="krJ-Na-itT"/>
-                        <viewControllerLayoutGuide type="bottom" id="8Ys-UR-OVO"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vAq-9I-Q96">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Q0-iN-KTr">
-                                <rect key="frame" x="16" y="84" width="288" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="3mZ-6t-mg2"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="5Q0-iN-KTr" firstAttribute="leading" secondItem="vAq-9I-Q96" secondAttribute="leadingMargin" id="N2a-Sv-s3I"/>
-                            <constraint firstItem="5Q0-iN-KTr" firstAttribute="trailing" secondItem="vAq-9I-Q96" secondAttribute="trailingMargin" id="Qcd-OE-CGp"/>
-                            <constraint firstItem="5Q0-iN-KTr" firstAttribute="top" secondItem="krJ-Na-itT" secondAttribute="bottom" constant="20" id="eeJ-wK-zJ0"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Add Person" id="MWz-UO-YNH">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="PtU-69-giD">
-                            <connections>
-                                <action selector="cancelPressed:" destination="YFa-fa-BEW" id="VSK-9k-JuD"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="SBL-Ot-7dl">
-                            <connections>
-                                <action selector="saveButton:" destination="YFa-fa-BEW" id="KEF-ks-Kq8"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="EnteredObjectTextFeild" destination="5Q0-iN-KTr" id="z9l-8c-rp0"/>
-                        <segue destination="fP1-A3-vJ3" kind="unwind" identifier="fromAddToMain" unwindAction="exitSegueWithSegue:" id="1MN-m0-bwJ"/>
-                        <segue destination="fP1-A3-vJ3" kind="unwind" identifier="FromAddToGroup" unwindAction="goToGroupScreenSegueWithSegue:" id="lhc-ep-Ilx"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aZL-am-hiU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="fP1-A3-vJ3" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="4539.375" y="-10"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="COs-Zv-WVn">
             <objects>
@@ -260,8 +270,11 @@
             <point key="canvasLocation" x="2325" y="-10"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Unlocked" width="25" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bHS-oP-H8u"/>
         <segue reference="EeQ-ik-zqZ"/>
+        <segue reference="3UQ-YV-1eL"/>
     </inferredMetricsTieBreakers>
 </document>
