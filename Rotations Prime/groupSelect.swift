@@ -9,11 +9,19 @@
 import UIKit
 
 class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     var theGroups: [String] = []
+    
     var isAddingGroup = false
+    
     var canAdd = true
     
+    var whatGroup = ""
+
+//              Outlets
+    @IBOutlet weak var GroupTableView: UITableView!
     @IBOutlet weak var addButtonO: UIBarButtonItem!
+//              Actions
     @IBAction func addingButton(_ sender: UIBarButtonItem) {
         isAddingGroup = true
         performSegue(withIdentifier: "GroupToAdd", sender: UIBarButtonItem())
@@ -24,28 +32,10 @@ class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate 
         }else if canAdd == false {
             
             addButtonO.isEnabled = false
-            
         }
+        performSegue(withIdentifier: "GroupToLock", sender: UIBarButtonItem())
     }
-    
-    @IBAction func goToGroupScreenSegue(Segue: UIStoryboardSegue) {
-    }
-
-    @IBOutlet weak var GroupTableView: UITableView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if isAddingGroup == true {
-            
-            let addPerson = segue.destination as! addPersonView
-            addPerson.isInMain = false
-            
-        }
-    }
+//              table View setup
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -59,20 +49,10 @@ class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         isAddingGroup = false
+        whatGroup = theGroups[indexPath.row]
         performSegue(withIdentifier: "GroupToMain", sender: UITableViewCell())
     }
-    override func viewDidAppear(_ animated: Bool) {
-        let itemsObject = UserDefaults.standard.object(forKey: "Groups")
-        
-        print("vvv")
-        if let tempItems = itemsObject as? [String] {
-            
-            theGroups = tempItems
-            print("viv")
-        }
-        
-        GroupTableView.reloadData()
-    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == UITableViewCellEditingStyle.delete {
@@ -82,8 +62,46 @@ class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate 
             GroupTableView.reloadData()
             
             UserDefaults.standard.set(theGroups, forKey: "Groups")
+            print(theGroups)
         }
     }
+//              system stuff
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        let itemsObject = UserDefaults.standard.object(forKey: "Groups")
+        
+        if let tempItems = itemsObject as? [String] {
+            
+            theGroups = tempItems
+            print("saved data")
+        }
+        
+        GroupTableView.reloadData()
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if isAddingGroup == true {
+            // is in main = false
+            let addPerson = segue.destination as! addPersonView
+            addPerson.isInMain = false
+            
+        }else if isAddingGroup == false {
+            
+            let mainScreenVar = segue.destination as! mainScreen
+            mainScreenVar.whatGroup = whatGroup
+            
+        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        GroupTableView.reloadData()
+    }
+//              get to groups segue
+    @IBAction func goToGroupScreenSegue(Segue: UIStoryboardSegue) {
+        GroupTableView.reloadData()
+    }
     
 }

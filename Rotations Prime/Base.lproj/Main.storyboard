@@ -67,23 +67,23 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Rotations" id="85n-zE-lMd">
-                        <leftBarButtonItems>
-                            <barButtonItem title="Back" id="aUU-yB-8lN" userLabel="Lock">
-                                <connections>
-                                    <action selector="BackButton:" destination="BYZ-38-t0r" id="KEy-dO-XJX"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="Unlocked" id="n0G-zm-4XK">
-                                <connections>
-                                    <action selector="Lock:" destination="BYZ-38-t0r" id="hPF-hb-AWf"/>
-                                </connections>
-                            </barButtonItem>
-                        </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="P0c-ce-E7N">
+                        <barButtonItem key="leftBarButtonItem" image="Unlocked" id="n0G-zm-4XK" userLabel="Lock">
                             <connections>
-                                <action selector="addPersonPressed:" destination="BYZ-38-t0r" id="Ewb-Hl-FYG"/>
+                                <action selector="Lock:" destination="BYZ-38-t0r" id="hPF-hb-AWf"/>
                             </connections>
                         </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="P0c-ce-E7N">
+                                <connections>
+                                    <action selector="addPersonPressed:" destination="BYZ-38-t0r" id="Ewb-Hl-FYG"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Edit" id="HCL-Wa-vKS" userLabel="Edit">
+                                <connections>
+                                    <segue destination="3Sf-Pf-ARl" kind="show" identifier="MainToEdit" id="AeX-xX-XPg"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="addButtonOu" destination="P0c-ce-E7N" id="0oB-zs-1Hi"/>
@@ -110,19 +110,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pz7-uV-HPE">
-                                <rect key="frame" x="16" y="20" width="50" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pz7-uV-HPE" userLabel="Back">
+                                <rect key="frame" x="16" y="0.0" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="egY-79-wqY"/>
                                     <constraint firstAttribute="width" constant="50" id="wSM-35-mOW"/>
                                 </constraints>
-                                <state key="normal" title="Cancel"/>
+                                <state key="normal" title="Back"/>
                                 <connections>
-                                    <action selector="cancelPressed:" destination="eIz-gm-FLx" eventType="touchUpInside" id="n9c-aP-3zh"/>
+                                    <action selector="BackPressed:" destination="eIz-gm-FLx" eventType="touchUpInside" id="7MU-Qj-dKP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6w-ya-dMQ">
-                                <rect key="frame" x="254" y="20" width="50" height="50"/>
+                                <rect key="frame" x="254" y="0.0" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="XFU-9x-R7o"/>
                                     <constraint firstAttribute="width" constant="50" id="z8W-LN-UMV"/>
@@ -133,25 +133,45 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EiT-QV-siE">
-                                <rect key="frame" x="16" y="78" width="288" height="30"/>
+                                <rect key="frame" x="16" y="58" width="288" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tt7-Dt-rY4">
+                                <rect key="frame" x="0.0" y="96" width="320" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="rv3-xv-g3y"/>
+                                </constraints>
+                            </pickerView>
+                            <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZA0-Sg-XL0">
+                                <rect key="frame" x="0.0" y="224" width="320" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="79V-KA-GMu"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="g6w-ya-dMQ" firstAttribute="trailing" secondItem="Lia-eW-vif" secondAttribute="trailingMargin" id="5Pc-X4-FKG"/>
+                            <constraint firstItem="Tt7-Dt-rY4" firstAttribute="leading" secondItem="Lia-eW-vif" secondAttribute="leading" id="Jfj-z1-FVA"/>
                             <constraint firstItem="EiT-QV-siE" firstAttribute="leading" secondItem="Lia-eW-vif" secondAttribute="leadingMargin" id="Rpb-lA-HCF"/>
+                            <constraint firstAttribute="trailing" secondItem="Tt7-Dt-rY4" secondAttribute="trailing" id="VuQ-dV-tbX"/>
+                            <constraint firstItem="Tt7-Dt-rY4" firstAttribute="top" secondItem="EiT-QV-siE" secondAttribute="bottom" constant="8" id="XXO-y8-Csa"/>
                             <constraint firstItem="g6w-ya-dMQ" firstAttribute="top" secondItem="TPm-to-gPK" secondAttribute="bottom" id="bVT-d6-pya"/>
+                            <constraint firstItem="ZA0-Sg-XL0" firstAttribute="top" secondItem="Tt7-Dt-rY4" secondAttribute="bottom" constant="8" id="eGh-XP-rPF"/>
                             <constraint firstItem="Pz7-uV-HPE" firstAttribute="top" secondItem="TPm-to-gPK" secondAttribute="bottom" id="eS6-N1-Cao"/>
                             <constraint firstItem="Pz7-uV-HPE" firstAttribute="leading" secondItem="Lia-eW-vif" secondAttribute="leadingMargin" id="gdb-z3-gVE"/>
                             <constraint firstItem="EiT-QV-siE" firstAttribute="trailing" secondItem="Lia-eW-vif" secondAttribute="trailingMargin" id="h15-CK-arO"/>
                             <constraint firstItem="EiT-QV-siE" firstAttribute="top" secondItem="g6w-ya-dMQ" secondAttribute="bottom" constant="8" id="uaf-zV-hVN"/>
+                            <constraint firstItem="ZA0-Sg-XL0" firstAttribute="leading" secondItem="Lia-eW-vif" secondAttribute="leading" id="uhx-fp-QXr"/>
+                            <constraint firstAttribute="trailing" secondItem="ZA0-Sg-XL0" secondAttribute="trailing" id="yI3-YY-ZoS"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="AsignmentPicker" destination="Tt7-Dt-rY4" id="7PZ-Xc-wZA"/>
                         <outlet property="EnteredObjectTextFeild" destination="EiT-QV-siE" id="z1l-vu-G2S"/>
+                        <outlet property="NamePicker" destination="ZA0-Sg-XL0" id="EWO-qd-nQc"/>
                         <segue destination="kLS-X1-uCQ" kind="unwind" identifier="FromAddToMain" unwindAction="exitSegueWithSegue:" id="iNa-Zh-qXy"/>
                         <segue destination="kLS-X1-uCQ" kind="unwind" identifier="FromAddToGroup" unwindAction="goToGroupScreenSegueWithSegue:" id="e1V-Bt-Fig"/>
                     </connections>
@@ -159,7 +179,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q45-34-61M" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="kLS-X1-uCQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4556.25" y="-16.25"/>
+            <point key="canvasLocation" x="4718" y="-10"/>
         </scene>
         <!--Groups-->
         <scene sceneID="6xW-0t-rJl">
@@ -251,6 +271,24 @@
             </objects>
             <point key="canvasLocation" x="3103" y="854"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Q5x-7C-zUQ">
+            <objects>
+                <viewController id="3Sf-Pf-ARl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jwd-W4-d7L"/>
+                        <viewControllerLayoutGuide type="bottom" id="g6y-C4-iJV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Oni-5R-RQu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PVw-hl-at8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3756" y="854"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="COs-Zv-WVn">
             <objects>
@@ -274,7 +312,7 @@
         <image name="Unlocked" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EeQ-ik-zqZ"/>
         <segue reference="3UQ-YV-1eL"/>
+        <segue reference="EeQ-ik-zqZ"/>
     </inferredMetricsTieBreakers>
 </document>

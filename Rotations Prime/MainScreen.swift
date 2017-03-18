@@ -12,8 +12,8 @@ class mainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var isInMain = true
     var isAddingName = false
     var canAdd = true
-    
     var allPeople = ["Mikael", "Grant", "Rachel"]
+    var whatGroup = ""
     @IBOutlet weak var addButtonOu: UIBarButtonItem!
     
     @IBAction func Lock(_ sender: UIBarButtonItem) {
@@ -47,8 +47,21 @@ class mainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             let addPerson = segue.destination as! addPersonView
             addPerson.isInMain = true
+            addPerson.whatGroup = whatGroup
             
         }
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        let NamesObject = UserDefaults.standard.object(forKey: "Name")
+        
+        if let tempItems = NamesObject as? [String] {
+            
+            allPeople = tempItems
+            
+            print("saved data in main")
+        }
+        
+        tableview.reloadData()
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -61,8 +74,8 @@ class mainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PeopleTVCell", for: indexPath)
         
-        cell.textLabel?.text = "balah"
-        cell.detailTextLabel?.text = "basdf"
+        cell.textLabel?.text = "Hello"
+        cell.detailTextLabel?.text = "World"
         
         return cell
     }

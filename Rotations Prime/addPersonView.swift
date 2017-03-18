@@ -7,13 +7,28 @@
 //
 
 import UIKit
-class addPersonView: UIViewController {
+class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+//              var setup
     var isInMain = true
-
+    
+    var IsAddingAssignment = true
+    
+    var groupOrPerson = ["Assignment", "Person"]
+    
+    var names2: [String] = []
+    
+    var whatGroup = ""
+    
+//              Outlet Setup
+    @IBOutlet weak var NamePicker: UIPickerView!
+    
+    @IBOutlet weak var AsignmentPicker: UIPickerView!
     
     @IBOutlet weak var EnteredObjectTextFeild: UITextField!
     
-    @IBAction func cancelPressed(_ sender: UIButton) {
+//              Action Setup
+    @IBAction func BackPressed(_ sender: UIButton) {
         if isInMain == true {
             
             performSegue(withIdentifier: "FromAddToMain", sender: UIButton())
@@ -25,32 +40,62 @@ class addPersonView: UIViewController {
         }
     }
     
-    // add/save           DONE
+// Add/Save
+    
     @IBAction func saveButton(_ sender: UIButton) {
         if isInMain == true {
             
-            let namesObject = UserDefaults.standard.object(forKey: "Names")
-            
-            var names: [String]
-            
-            if let tempItems = namesObject as? [String] {
+            if IsAddingAssignment == true {
                 
-                names = tempItems
+                let AssignmentObject = UserDefaults.standard.object(forKey: "\(whatGroup)" + "Assignment")
                 
-                names.append(EnteredObjectTextFeild.text!)
+                var Assignment: [String]
                 
-                print(names)
+                if let tempItems = AssignmentObject as? [String] {
+                    
+                    Assignment = tempItems
+                    
+                    Assignment.append("\(EnteredObjectTextFeild.text!)")
+                    
+//                    names2 = Assignment
+                    
+                    print(Assignment)
+                    
+                } else {
+                    
+                    Assignment = [EnteredObjectTextFeild.text!]
+                    print("THIS IS VERRY BAD")
+                }
                 
+                UserDefaults.standard.set(Assignment, forKey: "\(whatGroup)" + "Assignment")
+                
+                EnteredObjectTextFeild.text = ""
             } else {
                 
-                names = [EnteredObjectTextFeild.text!]
+                let NameObject = UserDefaults.standard.object(forKey: "Name")
+                
+                var Name: [String]
+                
+                if let tempItems = NameObject as? [String] {
+                    
+                    Name = tempItems
+                    
+                    Name.append("\(EnteredObjectTextFeild.text!)")
+                    names2.append("\(EnteredObjectTextFeild.text!)")
+                    print(Name)
+                    
+                } else {
+                    
+                    Name = [EnteredObjectTextFeild.text!]
+                    names2 = [EnteredObjectTextFeild.text!]
+                    print("this shouldnt print")
+                }
+                
+                UserDefaults.standard.set(Name, forKey: "Name")
+                
+                EnteredObjectTextFeild.text = ""
                 
             }
-            
-            UserDefaults.standard.set(names, forKey: "Names")
-            
-            EnteredObjectTextFeild.text = ""
-            
         }else if isInMain == false {
             
             let groupsObject = UserDefaults.standard.object(forKey: "Groups")
@@ -79,9 +124,60 @@ class addPersonView: UIViewController {
         }
         
     }
-    
+//              PickerView setup
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        switch pickerView.tag {
+        case 1:
+            return groupOrPerson.count
+        default:
+            return names2.count
+        }
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch pickerView.tag {
+        case 1:
+            return groupOrPerson[row]
+        default:
+            return names2[row]
+        }
+        
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView.tag == 1 {
+            if row == 2 {
+                NamePicker.isHidden = false
+            }else {
+                NamePicker.isHidden = true
+            }
+        }else if pickerView.tag == 2 {
+            
+            EnteredObjectTextFeild.text = names2[row]
+            
+        }
+    }
+//              system stuff
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        AsignmentPicker.dataSource = self
+        AsignmentPicker.delegate = self
+        NamePicker.dataSource = self
+        NamePicker.delegate = self
+        NamePicker.isHidden = true
+        NamePicker.tag = 2
+        AsignmentPicker.tag = 1
+        if isInMain == true {
+            
+            AsignmentPicker.isHidden = false
+            
+            
+        }else if isInMain == false {
+            
+            AsignmentPicker.isHidden = true
+            NamePicker.isHidden = true
+        }
     }
 }
