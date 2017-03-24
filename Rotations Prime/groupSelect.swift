@@ -9,7 +9,7 @@
 import UIKit
 
 class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+// MARK: - Varable Setup
     var theGroups: [String] = []
     
     var isAddingGroup = false
@@ -18,10 +18,10 @@ class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     var whatGroup = ""
 
-//              Outlets
+// MARK: - Outlets
     @IBOutlet weak var GroupTableView: UITableView!
     @IBOutlet weak var addButtonO: UIBarButtonItem!
-//              Actions
+// MARK: - Actions
     @IBAction func addingButton(_ sender: UIBarButtonItem) {
         isAddingGroup = true
         performSegue(withIdentifier: "GroupToAdd", sender: UIBarButtonItem())
@@ -35,7 +35,7 @@ class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate 
         }
         performSegue(withIdentifier: "GroupToLock", sender: UIBarButtonItem())
     }
-//              table View setup
+// MARK: - Table View Setup
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -65,7 +65,7 @@ class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate 
             print(theGroups)
         }
     }
-//              system stuff
+// MARK: - System stuff
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -99,7 +99,7 @@ class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate 
     override func viewWillAppear(_ animated: Bool) {
         GroupTableView.reloadData()
     }
-//              get to groups segue
+// MARK: get to groups segue
     @IBAction func goToGroupScreenSegue(Segue: UIStoryboardSegue) {
         GroupTableView.reloadData()
     }
