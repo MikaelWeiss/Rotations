@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5zy-BV-osm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5zy-BV-osm">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -96,7 +96,6 @@
                     <connections>
                         <outlet property="addButtonOu" destination="P0c-ce-E7N" id="0oB-zs-1Hi"/>
                         <outlet property="tableview" destination="gGl-fH-7lX" id="wc4-rk-DHp"/>
-                        <segue destination="OOd-bO-leR" kind="show" identifier="MainToLock" id="EeQ-ik-zqZ"/>
                         <segue destination="eUd-My-XnP" kind="unwind" identifier="BackButtonPressed" unwindAction="goToGroupScreenSegueWithSegue:" id="pwd-bd-kdP"/>
                         <segue destination="eIz-gm-FLx" kind="presentation" identifier="AddPerson" modalPresentationStyle="formSheet" modalTransitionStyle="flipHorizontal" id="3UQ-YV-1eL"/>
                     </connections>
@@ -253,7 +252,6 @@
                         <outlet property="GroupTableView" destination="1fx-wC-EO1" id="hkf-JA-UCZ"/>
                         <outlet property="addButtonO" destination="l9s-7b-hZU" id="Ewl-05-MdO"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="GroupToMain" id="xY3-1q-dsq"/>
-                        <segue destination="OOd-bO-leR" kind="show" identifier="GroupToLock" id="Zt3-02-civ"/>
                         <segue destination="eIz-gm-FLx" kind="presentation" identifier="GroupToAdd" modalPresentationStyle="formSheet" modalTransitionStyle="flipHorizontal" id="a46-YH-bXz"/>
                     </connections>
                 </viewController>
@@ -261,28 +259,10 @@
             </objects>
             <point key="canvasLocation" x="3103.125" y="-10"/>
         </scene>
-        <!--LockScreen-->
-        <scene sceneID="fu7-uB-zO7">
-            <objects>
-                <viewController title="LockScreen" id="OOd-bO-leR" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="21v-3Q-2eX"/>
-                        <viewControllerLayoutGuide type="bottom" id="tTr-YI-sDS"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xwl-tN-TaM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zh4-a4-If6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3103" y="854"/>
-        </scene>
         <!--Edit-->
         <scene sceneID="Q5x-7C-zUQ">
             <objects>
-                <viewController title="Edit" id="3Sf-Pf-ARl" sceneMemberID="viewController">
+                <viewController title="Edit" automaticallyAdjustsScrollViewInsets="NO" id="3Sf-Pf-ARl" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jwd-W4-d7L"/>
                         <viewControllerLayoutGuide type="bottom" id="g6y-C4-iJV"/>
@@ -290,12 +270,36 @@
                     <view key="view" contentMode="scaleToFill" id="Oni-5R-RQu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hUJ-kc-QzF">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="zuR-Nh-sdf">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zuR-Nh-sdf" id="OM0-NC-iAy">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="3Sf-Pf-ARl" id="pok-Nc-pic"/>
+                                    <outlet property="delegate" destination="3Sf-Pf-ARl" id="iaW-ua-hzH"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Edit" id="nSn-MS-SYx">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="Qcg-zx-vWv"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVw-hl-at8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3756" y="854"/>
+            <point key="canvasLocation" x="3755.625" y="853.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="COs-Zv-WVn">
@@ -320,7 +324,6 @@
         <image name="Unlocked" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="a46-YH-bXz"/>
-        <segue reference="EeQ-ik-zqZ"/>
+        <segue reference="3UQ-YV-1eL"/>
     </inferredMetricsTieBreakers>
 </document>

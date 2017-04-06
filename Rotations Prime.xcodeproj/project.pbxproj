@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D4872D821E76E00D0077D05F /* addPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4872D811E76E00D0077D05F /* addPersonView.swift */; };
 		D4872D861E78A4A60077D05F /* groupSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4872D851E78A4A60077D05F /* groupSelect.swift */; };
+		D4E0131D1E93E40F00F2246E /* EditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0131C1E93E40F00F2246E /* EditScreen.swift */; };
 		D4FBC5021E0F62E600D5A088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FBC5011E0F62E600D5A088 /* AppDelegate.swift */; };
 		D4FBC5041E0F62E600D5A088 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FBC5031E0F62E600D5A088 /* MainScreen.swift */; };
 		D4FBC5071E0F62E600D5A088 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4FBC5051E0F62E600D5A088 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		D4872D811E76E00D0077D05F /* addPersonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addPersonView.swift; sourceTree = "<group>"; };
 		D4872D851E78A4A60077D05F /* groupSelect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupSelect.swift; sourceTree = "<group>"; };
+		D4E0131C1E93E40F00F2246E /* EditScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditScreen.swift; sourceTree = "<group>"; };
 		D4FBC4FE1E0F62E600D5A088 /* Rotations Prime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rotations Prime.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4FBC5011E0F62E600D5A088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4FBC5031E0F62E600D5A088 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 				D4872D851E78A4A60077D05F /* groupSelect.swift */,
 				D4FBC5031E0F62E600D5A088 /* MainScreen.swift */,
 				D4872D811E76E00D0077D05F /* addPersonView.swift */,
+				D4E0131C1E93E40F00F2246E /* EditScreen.swift */,
 			);
 			name = Controlor;
 			sourceTree = "<group>";
@@ -52,6 +55,7 @@
 		D40C9A851E6DA14A0043EB2A /* Extras */ = {
 			isa = PBXGroup;
 			children = (
+				D4FBC5011E0F62E600D5A088 /* AppDelegate.swift */,
 				D4FBC5081E0F62E600D5A088 /* Assets.xcassets */,
 				D4FBC50D1E0F62E700D5A088 /* Info.plist */,
 			);
@@ -78,7 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				D40C9A831E6DA10A0043EB2A /* Controlor */,
-				D4FBC5011E0F62E600D5A088 /* AppDelegate.swift */,
 				D4FBC5051E0F62E600D5A088 /* Main.storyboard */,
 				D4FBC50A1E0F62E600D5A088 /* LaunchScreen.storyboard */,
 				D40C9A851E6DA14A0043EB2A /* Extras */,
@@ -162,6 +165,7 @@
 				D4FBC5041E0F62E600D5A088 /* MainScreen.swift in Sources */,
 				D4872D821E76E00D0077D05F /* addPersonView.swift in Sources */,
 				D4FBC5021E0F62E600D5A088 /* AppDelegate.swift in Sources */,
+				D4E0131D1E93E40F00F2246E /* EditScreen.swift in Sources */,
 				D4872D861E78A4A60077D05F /* groupSelect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

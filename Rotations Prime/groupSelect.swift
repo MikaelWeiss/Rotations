@@ -14,8 +14,6 @@ class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     var isAddingGroup = false
     
-    var canAdd = true
-    
     var whatGroup = ""
 
 // MARK: - Outlets
@@ -26,15 +24,7 @@ class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate 
         isAddingGroup = true
         performSegue(withIdentifier: "GroupToAdd", sender: UIBarButtonItem())
     }
-    @IBAction func Lock(_ sender: UIBarButtonItem) {
-        if canAdd == true {
-            addButtonO.isEnabled = true
-        }else if canAdd == false {
-            
-            addButtonO.isEnabled = false
-        }
-        performSegue(withIdentifier: "GroupToLock", sender: UIBarButtonItem())
-    }
+    
 // MARK: - Table View Setup
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

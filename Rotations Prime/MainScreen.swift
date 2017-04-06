@@ -11,36 +11,26 @@ import UIKit
 class mainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
 // MARK: - Variable Setup
     var isInMain = true
-    var isAddingName = false
-    var canAdd = true
+    var isAddingName = 1
     var allPeople: [String] = []
     var theAssignments: [String] = []
     var whatGroup = ""
-    var ifNoAssignment = "No Assignment!"
-    var ifNoPerson = "No Person!"
+    var ifNoAssignment = "No Assignment"
+    var ifNoPerson = "No Person"
 // MARK: - Outlet Setup
     @IBOutlet weak var addButtonOu: UIBarButtonItem!
     @IBOutlet weak var tableview: UITableView!
-
-    @IBAction func Lock(_ sender: UIBarButtonItem) {
-        if canAdd == true {
-            addButtonOu.isEnabled = true
-        }else if canAdd == false {
-            
-            addButtonOu.isEnabled = false
-            
-        }
-    }
 // MARK: - Action Setup
+   
     @IBAction func Edit(_ sender: UIBarButtonItem) {
-        isAddingName = false
+        isAddingName = 3
     }
     @IBAction func BackButton(_ sender: UIBarButtonItem) {
-        isAddingName = false
+        isAddingName = 2
         performSegue(withIdentifier: "BackButtonPressed", sender: UIBarButtonItem())
     }
     @IBAction func addPersonPressed(_ sender: UIBarButtonItem) {
-        isAddingName = true
+        isAddingName = 1
         performSegue(withIdentifier: "AddPerson", sender: UIBarButtonItem())
     }
     
@@ -72,12 +62,15 @@ class mainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableview.allowsSelection = false
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if isAddingName == true {
+        if isAddingName == 1 {
             
             let addPerson = segue.destination as! addPersonView
             addPerson.isInMain = true
             addPerson.whatGroup = whatGroup
             
+        }else if isAddingName == 3 {
+            let editScreen = segue.destination as! EditScreen
+            editScreen.whatGroup = whatGroup
         }
     }
     override func viewDidAppear(_ animated: Bool) {
