@@ -73,7 +73,7 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                 EnteredObjectTextFeild.text = ""
             }else {
 // MARK: Add Name
-                if AllNames.contains("\(EnteredObjectTextFeild.text)"){
+                if AllNames.contains("\(String(describing: EnteredObjectTextFeild.text))"){
                     print("saving to this group")
                     addNameToGroup()
                 }else {

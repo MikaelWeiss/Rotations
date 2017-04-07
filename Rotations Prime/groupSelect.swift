@@ -83,6 +83,8 @@ class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate 
             
             let mainScreenVar = segue.destination as! mainScreen
             mainScreenVar.whatGroup = whatGroup
+//MARK: there may be a lot of bugs with this.
+            mainScreenVar.isAddingName = 2
             
         }
     }

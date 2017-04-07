@@ -11,12 +11,13 @@ import UIKit
 class mainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
 // MARK: - Variable Setup
     var isInMain = true
-    var isAddingName = 1
+    var isAddingName = 2
     var allPeople: [String] = []
     var theAssignments: [String] = []
     var whatGroup = ""
     var ifNoAssignment = "No Assignment"
     var ifNoPerson = "No Person"
+    
 // MARK: - Outlet Setup
     @IBOutlet weak var addButtonOu: UIBarButtonItem!
     @IBOutlet weak var tableview: UITableView!
@@ -24,6 +25,7 @@ class mainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     @IBAction func Edit(_ sender: UIBarButtonItem) {
         isAddingName = 3
+        performSegue(withIdentifier: "whatsUp", sender: UIBarButtonItem())
     }
     @IBAction func BackButton(_ sender: UIBarButtonItem) {
         isAddingName = 2
@@ -69,12 +71,13 @@ class mainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
             addPerson.whatGroup = whatGroup
             
         }else if isAddingName == 3 {
-            let editScreen = segue.destination as! EditScreen
-            editScreen.whatGroup = whatGroup
+            let TheEditScreen = segue.destination as! EditScreen
+            TheEditScreen.whatGroup = whatGroup
         }
     }
     override func viewDidAppear(_ animated: Bool) {
-        let NamesObject = UserDefaults.standard.object(forKey: "Name")
+        
+        let NamesObject = UserDefaults.standard.object(forKey: "Name" + whatGroup)
         
         if let tempItems = NamesObject as? [String] {
             
@@ -96,6 +99,7 @@ class mainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
 // MARK: - the Exit Segue
     @IBAction func exitSegue(segue: UIStoryboardSegue) {
         tableview.reloadData()
+        isAddingName = 2
         print("Exited to main")
     }
 
@@ -113,5 +117,30 @@ class mainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+    func reorderArray(theArray: [String]) {
+        for _ in theArray {
+            var diceRoll1 = Int(arc4random_uniform(UInt32(theArray.count)) + 1)
+            var diceRoll2 = Int(arc4random_uniform(UInt32(theArray.count)) + 1)
+            var myArray = allPeople
+            if diceRoll1 != diceRoll2 {
+                // Swap elements at index: 2 and 3
+                print(myArray)
+                swap(&myArray[diceRoll1], &myArray[diceRoll2])
+                print(myArray)
+            }else {
+                diceRoll1 = Int(arc4random_uniform(UInt32(theArray.count)) + 1)
+                diceRoll2 = Int(arc4random_uniform(UInt32(theArray.count)) + 1)
+                if diceRoll1 != diceRoll2 {
+                    // Swap elements at index: 2 and 3
+                    print(myArray)
+                    swap(&myArray[diceRoll1], &myArray[diceRoll2])
+                    print(myArray)
+                }
+            }
+            UserDefaults.standard.set(allPeople, forKey: "Name" + whatGroup)
+            tableview.reloadData()
+        }
+    }
+    
 
 }
