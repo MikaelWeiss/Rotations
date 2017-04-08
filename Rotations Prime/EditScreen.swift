@@ -37,6 +37,9 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
     }
 // MARK: - Table View Setup
+    
+    @IBOutlet weak var myTableView: UITableView!
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -97,6 +100,10 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
             }
         }
+    }
+// MARK: - Exit segue
+    @IBAction func GoToEdit(Segue: UIStoryboardSegue) {
+        myTableView.reloadData()
     }
 
 }

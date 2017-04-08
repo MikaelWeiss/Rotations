@@ -14,10 +14,17 @@ class RotationPicker: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     var myArray = ["Hourly", "Daily", "Weekly", "Monthly", "Yearly"]
     var myArray2 = [String]()
+    
+    @IBAction func CancelButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "editDateToEdit", sender: UIButton())
+    }
+    @IBAction func SaveButton(_ sender: UIButton) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        myArray2 = ["1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM", "12AM",]
+        myArray2 = [""]
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -45,10 +52,9 @@ class RotationPicker: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerView.tag {
         case 1:
-            myArray2 = ["1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM", "12AM",]
-            pickerView.reloadAllComponents()
+            print("Sup")
         default:
-            <#code#>
+            myArray2 = [""]
         }
     }
 }
