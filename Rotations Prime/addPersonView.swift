@@ -16,12 +16,13 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     
     var groupOrPerson = ["Assignment", "Person"]
     
-    var namesForEachGroup: [String] = []
+    var namesForEachGroup = [""]
     
-    var AllNames: [String] = ["names will show up here"]
+    var AllNames = ["names will show up here"]
     
     var whatGroup = ""
     
+    var UnusedNames = [""]
     
 // MARK: - Outlet Setup
     @IBOutlet weak var NamePicker: UIPickerView!
@@ -73,9 +74,12 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                 EnteredObjectTextFeild.text = ""
             }else {
 // MARK: Add Name
-                if AllNames.contains("\(String(describing: EnteredObjectTextFeild.text))"){
-                    print("saving to this group")
-                    addNameToGroup()
+                if AllNames.contains("\(EnteredObjectTextFeild.text!)"){
+                    if namesForEachGroup.contains(EnteredObjectTextFeild.text!) {
+                        print("saving to this group")
+                        addNameToGroup()
+                        AlertAction(Title: "Name Exists", Message: "This name already exists in this group", alerTitle: "OK")
+                    }
                 }else {
                     let NameObject = UserDefaults.standard.object(forKey: "Name")
                     
@@ -130,7 +134,7 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             
         }
 // MARK: Add Name func
-    func addNameToGroup() {
+    func addNameToGroup(){
         let nameObject = UserDefaults.standard.object(forKey: "Name" + whatGroup)
         
         var NameForGroup: [String]
@@ -150,6 +154,7 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         }
         
         UserDefaults.standard.set(NameForGroup, forKey: "Name" + whatGroup)
+        namesForEachGroup = NameForGroup
         print("saved to group")
         EnteredObjectTextFeild.text = ""
     }
@@ -162,7 +167,8 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             case 1:
                 return groupOrPerson.count
             default:
-                return AllNames.count
+//                findUnusedNames()
+                return UnusedNames.count
             }
         }
         func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -170,10 +176,12 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             case 1:
                 return groupOrPerson[row]
             default:
-                return AllNames[row]
+//                findUnusedNames()
+                return UnusedNames[row]
             }
             
         }
+// MARK: didSelectRow
         func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
             
             if pickerView.tag == 1 {
@@ -196,6 +204,14 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         override func viewDidLoad() {
             super.viewDidLoad()
             // Do any additional setup after loading the view.
+            let NamesObject = UserDefaults.standard.object(forKey: "Name" + whatGroup)
+            
+            if let tempItems = NamesObject as? [String] {
+                
+                namesForEachGroup = tempItems
+                
+                print("saved data in add (Name)")
+            }
             AsignmentPicker.dataSource = self
             AsignmentPicker.delegate = self
             NamePicker.dataSource = self
@@ -223,4 +239,34 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             }
             IsAddingAssignment = true
         }
+// MARK: - costome stuff
+    func AlertAction(Title: String, Message: String, alerTitle: String) {
+        // create the alert
+        let alert = UIAlertController(title: Title, message: Message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: alerTitle, style: UIAlertActionStyle.default, handler: nil))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+// MARK: - WORK ON THIS!!!!!!
+//    func findUnusedNames() {
+//        for i in 0...AllNames.count {
+//            print("first")
+//            if i <= namesForEachGroup.count && i <= AllNames.count {
+//                print("asfdasf")
+//                if namesForEachGroup.contains(AllNames[i]){
+//                    print("whats up")
+//                }else {
+//                    UnusedNames.append(AllNames[i])
+//                    print("this")
+//                }
+//            }else {
+//                
+//            }
+//            print("asdf")
+//        }
+//    }
 }

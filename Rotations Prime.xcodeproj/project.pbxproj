@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D42B131C1E97BE38002AA9B1 /* RotationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42B131B1E97BE38002AA9B1 /* RotationPicker.swift */; };
+		D42B131C1E97BE38002AA9B1 /* RepeatsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42B131B1E97BE38002AA9B1 /* RepeatsPicker.swift */; };
 		D4872D821E76E00D0077D05F /* addPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4872D811E76E00D0077D05F /* addPersonView.swift */; };
 		D4872D861E78A4A60077D05F /* groupSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4872D851E78A4A60077D05F /* groupSelect.swift */; };
 		D4E0131D1E93E40F00F2246E /* EditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0131C1E93E40F00F2246E /* EditScreen.swift */; };
@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D42B131B1E97BE38002AA9B1 /* RotationPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotationPicker.swift; sourceTree = "<group>"; };
+		D42B131B1E97BE38002AA9B1 /* RepeatsPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatsPicker.swift; sourceTree = "<group>"; };
 		D4872D811E76E00D0077D05F /* addPersonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addPersonView.swift; sourceTree = "<group>"; };
 		D4872D851E78A4A60077D05F /* groupSelect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupSelect.swift; sourceTree = "<group>"; };
 		D4E0131C1E93E40F00F2246E /* EditScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditScreen.swift; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 				D4FBC5031E0F62E600D5A088 /* MainScreen.swift */,
 				D4872D811E76E00D0077D05F /* addPersonView.swift */,
 				D4E0131C1E93E40F00F2246E /* EditScreen.swift */,
-				D42B131B1E97BE38002AA9B1 /* RotationPicker.swift */,
+				D42B131B1E97BE38002AA9B1 /* RepeatsPicker.swift */,
 			);
 			name = Controlor;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4FBC5041E0F62E600D5A088 /* MainScreen.swift in Sources */,
-				D42B131C1E97BE38002AA9B1 /* RotationPicker.swift in Sources */,
+				D42B131C1E97BE38002AA9B1 /* RepeatsPicker.swift in Sources */,
 				D4872D821E76E00D0077D05F /* addPersonView.swift in Sources */,
 				D4FBC5021E0F62E600D5A088 /* AppDelegate.swift in Sources */,
 				D4E0131D1E93E40F00F2246E /* EditScreen.swift in Sources */,

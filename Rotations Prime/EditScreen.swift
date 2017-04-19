@@ -51,6 +51,7 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
             return "Names"
         }
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 1:
@@ -63,6 +64,12 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        switch indexPath.section {
+        case 1:
+            cell.detailTextLabel?.text! = theAssignments[indexPath.row]
+        default:
+            cell.detailTextLabel?.text! = allPeople[indexPath.row]
+        }
         return cell
     }
     
@@ -77,8 +84,6 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
             if editingStyle == .delete {
                 theAssignments.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
-                theAssignments.remove(at: indexPath.row)
-                
                 tableView.reloadData()
                 
                 UserDefaults.standard.set(theAssignments, forKey: whatGroup + "Assignment")
@@ -90,8 +95,6 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
             if editingStyle == .delete {
                 allPeople.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
-                allPeople.remove(at: indexPath.row)
-                
                 tableView.reloadData()
                 
                 UserDefaults.standard.set(theAssignments, forKey: whatGroup + "Assignment")
