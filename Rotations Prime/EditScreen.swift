@@ -9,7 +9,7 @@
 import UIKit
 
 class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var allPeople = [String]()
+    var PeopleForGroup = [String]()
     var theAssignments = [String]()
     var whatGroup = ""
     var whatNameName = ""
@@ -22,8 +22,8 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         if let tempItems = NamesObject as? [String] {
             
-            allPeople = tempItems
-            whatNameName = "Name" + whatGroup
+            PeopleForGroup = tempItems
+            
             print("saved data in main (Name)")
         }
         let AssignmentObject = UserDefaults.standard.object(forKey: whatGroup + "Assignment")
@@ -31,7 +31,7 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if let tempItems = AssignmentObject as? [String] {
             
             theAssignments = tempItems
-            whatNameAssignments = whatGroup + "Assignments"
+            
             print("saved data in main (Assignments)")
         }
         
@@ -57,18 +57,18 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         case 1:
             return theAssignments.count
         default:
-            return allPeople.count
+            return PeopleForGroup.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
         switch indexPath.section {
         case 1:
-            cell.detailTextLabel?.text! = theAssignments[indexPath.row]
+            cell.detailTextLabel?.text = theAssignments[indexPath.row]
         default:
-            cell.detailTextLabel?.text! = allPeople[indexPath.row]
+            cell.detailTextLabel?.text = PeopleForGroup[indexPath.row]
         }
         return cell
     }
@@ -80,24 +80,26 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         switch indexPath.section {
-        case 1:
+        case 0:
+            if editingStyle == .delete {
+                PeopleForGroup.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.reloadData()
+                
+                UserDefaults.standard.set(PeopleForGroup, forKey: whatGroup + "Assignment")
+                UserDefaults.standard.set(PeopleForGroup, forKey: "Name" + whatGroup)
+                print(PeopleForGroup)
+            } else if editingStyle == .insert {
+                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+            }
+        default:
             if editingStyle == .delete {
                 theAssignments.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
                 tableView.reloadData()
                 
                 UserDefaults.standard.set(theAssignments, forKey: whatGroup + "Assignment")
-                print(theAssignments)
-            } else if editingStyle == .insert {
-                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-            }
-        default:
-            if editingStyle == .delete {
-                allPeople.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .fade)
-                tableView.reloadData()
-                
-                UserDefaults.standard.set(theAssignments, forKey: whatGroup + "Assignment")
+                UserDefaults.standard.set(PeopleForGroup, forKey: "Name" + whatGroup)
                 print(theAssignments)
             } else if editingStyle == .insert {
                 // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.

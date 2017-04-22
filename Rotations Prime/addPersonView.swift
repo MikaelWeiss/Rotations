@@ -22,7 +22,7 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     
     var whatGroup = ""
     
-    var UnusedNames = [""]
+//    var UnusedNames = [""]
     
 // MARK: - Outlet Setup
     @IBOutlet weak var NamePicker: UIPickerView!
@@ -77,7 +77,7 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                 if AllNames.contains("\(EnteredObjectTextFeild.text!)"){
                     if namesForEachGroup.contains(EnteredObjectTextFeild.text!) {
                         print("saving to this group")
-                        addNameToGroup()
+                        EnteredObjectTextFeild.text = ""
                         AlertAction(Title: "Name Exists", Message: "This name already exists in this group", alerTitle: "OK")
                     }
                 }else {
@@ -168,7 +168,7 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                 return groupOrPerson.count
             default:
 //                findUnusedNames()
-                return UnusedNames.count
+                return AllNames.count
             }
         }
         func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -177,7 +177,7 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                 return groupOrPerson[row]
             default:
 //                findUnusedNames()
-                return UnusedNames[row]
+                return AllNames[row]
             }
             
         }
@@ -251,11 +251,28 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         self.present(alert, animated: true, completion: nil)
         
     }
-// MARK: - WORK ON THIS!!!!!!
-//    func findUnusedNames() {
+
+//    @IBAction func asdf(_ sender: Any) {
+//        findUnusedNames1()
+//    }
+//    
+//    func findUnusedNames1() {
+//        print("Group",namesForEachGroup, "All",AllNames)
+//        for i in 0...AllNames.count {
+//            if namesForEachGroup.contains(AllNames[i]) {
+//                print("whats up\(i)")
+//            }else {
+//                UnusedNames.append(AllNames[i])
+//                print(UnusedNames)
+//                print("\(i)")
+//            }
+//        }
+//    }
+//
+//    func findUnusedNames2() {
+//        print("Group",namesForEachGroup, "All",AllNames)
 //        for i in 0...AllNames.count {
 //            print("first")
-//            if i <= namesForEachGroup.count && i <= AllNames.count {
 //                print("asfdasf")
 //                if namesForEachGroup.contains(AllNames[i]){
 //                    print("whats up")
@@ -263,9 +280,6 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
 //                    UnusedNames.append(AllNames[i])
 //                    print("this")
 //                }
-//            }else {
-//                
-//            }
 //            print("asdf")
 //        }
 //    }

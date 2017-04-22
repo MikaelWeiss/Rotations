@@ -10,15 +10,15 @@ import UIKit
 
 class RepeatsPicker: UITableViewController {
     @IBOutlet weak var firstPickerView: UIPickerView!
-
+    
     @IBOutlet weak var detailLable: UILabel!
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "EditTimesToEdit", sender: UIBarButtonItem())
     }
     
-    @IBAction func datePickerValue(sender: UIPickerView) {
-        datePickerChanged(row: firstPickerView.selectedRow(inComponent: 1))
-    }
+    //    @IBAction func datePickerValue(sender: UIPickerView) {
+    //        datePickerChanged(row: firstPickerView.selectedRow(inComponent: 1))
+    //    }
     var myArray = ["Hourly", "Daily", "Weekly", "Monthly", "Yearly"]
     var myArray2 = [String]()
     
@@ -26,9 +26,6 @@ class RepeatsPicker: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         datePickerChanged(row: 1)
-    }
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerView.tag {
