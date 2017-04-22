@@ -22,7 +22,7 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     
     var whatGroup = ""
     
-//    var UnusedNames = [""]
+    var allGroups = [""]
     
 // MARK: - Outlet Setup
     @IBOutlet weak var NamePicker: UIPickerView!
@@ -66,7 +66,7 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                 } else {
                     
                     Assignment = [EnteredObjectTextFeild.text!]
-                    print("THIS IS VERRY BAD 0")
+                    print("user defaults error 2")
                 }
                 
                 UserDefaults.standard.set(Assignment, forKey: "\(whatGroup)" + "Assignment")
@@ -76,9 +76,11 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
 // MARK: Add Name
                 if AllNames.contains("\(EnteredObjectTextFeild.text!)"){
                     if namesForEachGroup.contains(EnteredObjectTextFeild.text!) {
-                        print("saving to this group")
                         EnteredObjectTextFeild.text = ""
                         AlertAction(Title: "Name Exists", Message: "This name already exists in this group", alerTitle: "OK")
+                    }else {
+                        addNameToGroup()
+                        EnteredObjectTextFeild.text = ""
                     }
                 }else {
                     let NameObject = UserDefaults.standard.object(forKey: "Name")
@@ -96,7 +98,7 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                     } else {
                         
                         Name = [EnteredObjectTextFeild.text!]
-                        print("THIS IS VERRY BAD")
+                        print("user defaults error 3")
                     }
                     
                     UserDefaults.standard.set(Name, forKey: "Name")
@@ -107,6 +109,10 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             }
             }else if isInMain == false {
 // MARK: Add Group
+            if allGroups.contains("\(EnteredObjectTextFeild.text!)"){
+                    EnteredObjectTextFeild.text = ""
+                    AlertAction(Title: "Group Exists", Message: "This Group already exists", alerTitle: "OK")
+            }else {
                 let groupsObject = UserDefaults.standard.object(forKey: "Groups")
                 
                 var groups: [String]
@@ -122,7 +128,7 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                 } else {
                     
                     groups = [EnteredObjectTextFeild.text!]
-                    
+                    print("Bad")
                 }
                 
                 UserDefaults.standard.set(groups, forKey: "Groups")
@@ -132,6 +138,8 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                 
             }
             
+        }
+        
         }
 // MARK: Add Name func
     func addNameToGroup(){
@@ -150,7 +158,7 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         } else {
             
             NameForGroup = [EnteredObjectTextFeild.text!]
-            print("THIS IS VERRY BAD 1")
+            print("user defaults error 4")
         }
         
         UserDefaults.standard.set(NameForGroup, forKey: "Name" + whatGroup)
@@ -212,6 +220,14 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                 
                 print("saved data in add (Name)")
             }
+            let groupsObject = UserDefaults.standard.object(forKey: "Groups")
+            
+            if let tempItems = groupsObject as? [String] {
+                allGroups = tempItems
+                print(allGroups)
+            } else {
+                print("user defaults error 1")
+            }
             AsignmentPicker.dataSource = self
             AsignmentPicker.delegate = self
             NamePicker.dataSource = self
@@ -235,7 +251,7 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                 print(AllNames)
                 
             } else {
-                print("this shouldnt print 2")
+                print("user defaults error 5")
             }
             IsAddingAssignment = true
         }
@@ -251,36 +267,4 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         self.present(alert, animated: true, completion: nil)
         
     }
-
-//    @IBAction func asdf(_ sender: Any) {
-//        findUnusedNames1()
-//    }
-//    
-//    func findUnusedNames1() {
-//        print("Group",namesForEachGroup, "All",AllNames)
-//        for i in 0...AllNames.count {
-//            if namesForEachGroup.contains(AllNames[i]) {
-//                print("whats up\(i)")
-//            }else {
-//                UnusedNames.append(AllNames[i])
-//                print(UnusedNames)
-//                print("\(i)")
-//            }
-//        }
-//    }
-//
-//    func findUnusedNames2() {
-//        print("Group",namesForEachGroup, "All",AllNames)
-//        for i in 0...AllNames.count {
-//            print("first")
-//                print("asfdasf")
-//                if namesForEachGroup.contains(AllNames[i]){
-//                    print("whats up")
-//                }else {
-//                    UnusedNames.append(AllNames[i])
-//                    print("this")
-//                }
-//            print("asdf")
-//        }
-//    }
 }

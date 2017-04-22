@@ -18,6 +18,7 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        
         let NamesObject = UserDefaults.standard.object(forKey: "Name" + whatGroup)
         
         if let tempItems = NamesObject as? [String] {
