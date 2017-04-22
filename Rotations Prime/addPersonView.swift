@@ -51,7 +51,7 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             
             if IsAddingAssignment == true {
 // MARK: Add Assignment
-                let AssignmentObject = UserDefaults.standard.object(forKey: "\(whatGroup)" + "Assignment")
+                let AssignmentObject = UserDefaults.standard.object(forKey: whatGroup + "Assignment")
                 
                 var Assignment: [String]
                 
@@ -69,7 +69,7 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                     print("user defaults error 2")
                 }
                 
-                UserDefaults.standard.set(Assignment, forKey: "\(whatGroup)" + "Assignment")
+                UserDefaults.standard.set(Assignment, forKey: whatGroup + "Assignment")
                 
                 EnteredObjectTextFeild.text = ""
             }else {
@@ -139,7 +139,8 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             }
             
         }
-        
+        NamePicker.reloadAllComponents()
+        AsignmentPicker.reloadAllComponents()
         }
 // MARK: Add Name func
     func addNameToGroup(){

@@ -50,7 +50,7 @@
                                         <rect key="frame" x="0.0" y="44" width="320" height="224"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pzw-gA-Ccd" id="ku5-c8-Xc0">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="224"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="223.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P4E-Q3-96t">
@@ -188,7 +188,7 @@
                                     <constraint firstAttribute="height" constant="50" id="egY-79-wqY"/>
                                     <constraint firstAttribute="width" constant="50" id="wSM-35-mOW"/>
                                 </constraints>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="BackPressed:" destination="eIz-gm-FLx" eventType="touchUpInside" id="7MU-Qj-dKP"/>
                                 </connections>
@@ -423,6 +423,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3UQ-YV-1eL"/>
+        <segue reference="a46-YH-bXz"/>
     </inferredMetricsTieBreakers>
 </document>

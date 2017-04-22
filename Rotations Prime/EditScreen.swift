@@ -17,7 +17,7 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        myTableView.allowsSelection = false
         
         let NamesObject = UserDefaults.standard.object(forKey: "Name" + whatGroup)
         
@@ -66,10 +66,16 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
         switch indexPath.section {
-        case 1:
-            cell.detailTextLabel?.text = theAssignments[indexPath.row]
+        case 0:
+            print("case 1")
+            print(PeopleForGroup)
+            cell.textLabel?.text = PeopleForGroup[indexPath.row]
+            print("works 1")
         default:
-            cell.detailTextLabel?.text = PeopleForGroup[indexPath.row]
+            print("default")
+            print(theAssignments)
+            cell.textLabel?.text = theAssignments[indexPath.row]
+            print("works 2")
         }
         return cell
     }

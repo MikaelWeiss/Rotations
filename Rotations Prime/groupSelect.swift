@@ -12,6 +12,8 @@ class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate 
 // MARK: - Varable Setup
     var theGroups: [String] = []
     
+    var emptyArray = [""]
+    
     var isAddingGroup = false
     
     var whatGroup = ""
@@ -46,12 +48,15 @@ class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == UITableViewCellEditingStyle.delete {
-            
+            whatGroup = theGroups[indexPath.row]
             theGroups.remove(at: indexPath.row)
             
             GroupTableView.reloadData()
             
             UserDefaults.standard.set(theGroups, forKey: "Groups")
+            
+            UserDefaults.standard.set(emptyArray, forKey: "Name" + whatGroup)
+            UserDefaults.standard.set(emptyArray, forKey: whatGroup + "Assignment")
             print(theGroups)
         }
     }
