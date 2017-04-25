@@ -103,6 +103,7 @@
                     <connections>
                         <outlet property="detailLable" destination="TvJ-3j-uPl" id="ZJ4-Fx-VaU"/>
                         <outlet property="firstPickerView" destination="hio-hx-Twt" id="Tuv-ND-Af3"/>
+                        <outlet property="repeatSegmentedController" destination="of1-JV-4LU" id="71k-iv-peK"/>
                         <segue destination="bjH-xx-CMg" kind="unwind" identifier="EditTimesToEdit" unwindAction="GoToEditWithSegue:" id="TT5-4u-Sx5"/>
                     </connections>
                 </tableViewController>

@@ -64,8 +64,6 @@ class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    }
-    override func viewDidAppear(_ animated: Bool) {
         let itemsObject = UserDefaults.standard.object(forKey: "Groups")
         
         if let tempItems = itemsObject as? [String] {
@@ -98,6 +96,7 @@ class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
 // MARK: get to groups segue
     @IBAction func goToGroupScreenSegue(Segue: UIStoryboardSegue) {
+        theGroups = UserDefaults.standard.array(forKey: "Groups") as! [String]
         GroupTableView.reloadData()
     }
     

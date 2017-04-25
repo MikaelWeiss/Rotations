@@ -36,11 +36,12 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     @IBAction func donePressed(_ sender: UIButton) {
         if isInMain == true {
             
-            self.dismiss(animated: true, completion: nil)
+            performSegue(withIdentifier: "FromAddToMain", sender: UIButton())
             
         }else {
             
-            self.dismiss(animated: true, completion: nil)
+            performSegue(withIdentifier: "FromAddToGroup", sender: UIButton())
+//            self.dismiss(animated: true, completion: nil)
             
         }
     }
