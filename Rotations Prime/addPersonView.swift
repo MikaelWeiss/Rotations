@@ -32,14 +32,15 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     @IBOutlet weak var EnteredObjectTextFeild: UITextField!
     
 // MARK: - Action Setup
-    @IBAction func BackPressed(_ sender: UIButton) {
+
+    @IBAction func donePressed(_ sender: UIButton) {
         if isInMain == true {
             
-            performSegue(withIdentifier: "FromAddToMain", sender: UIButton())
+            self.dismiss(animated: true, completion: nil)
             
         }else {
             
-            performSegue(withIdentifier: "FromAddToGroup", sender: UIButton())
+            self.dismiss(animated: true, completion: nil)
             
         }
     }
@@ -51,11 +52,11 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             
             if IsAddingAssignment == true {
 // MARK: Add Assignment
-                let AssignmentObject = UserDefaults.standard.object(forKey: whatGroup + "Assignment")
+                let AssignmentObject = UserDefaults.standard.object(forKey: whatGroup + "Assignment")  as? [String]
                 
                 var Assignment: [String]
                 
-                if let tempItems = AssignmentObject as? [String] {
+                if let tempItems = AssignmentObject {
                     
                     Assignment = tempItems
                     
@@ -83,11 +84,11 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                         EnteredObjectTextFeild.text = ""
                     }
                 }else {
-                    let NameObject = UserDefaults.standard.object(forKey: "Name")
+                    let NameObject = UserDefaults.standard.object(forKey: "Name")  as? [String]
                     
                     var Name: [String]
                     
-                    if let tempItems = NameObject as? [String] {
+                    if let tempItems = NameObject {
                         
                         Name = tempItems
                         
@@ -104,6 +105,8 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                     UserDefaults.standard.set(Name, forKey: "Name")
                     addNameToGroup()
                     EnteredObjectTextFeild.text = ""
+                    NamePicker.reloadAllComponents()
+                    AsignmentPicker.reloadAllComponents()
                 }
                 
             }
@@ -113,11 +116,11 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                     EnteredObjectTextFeild.text = ""
                     AlertAction(Title: "Group Exists", Message: "This Group already exists", alerTitle: "OK")
             }else {
-                let groupsObject = UserDefaults.standard.object(forKey: "Groups")
+                let groupsObject = UserDefaults.standard.object(forKey: "Groups")  as? [String]
                 
                 var groups: [String]
                 
-                if let tempItems = groupsObject as? [String] {
+                if let tempItems = groupsObject {
                     
                     groups = tempItems
                     
@@ -137,18 +140,19 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                 
                 
             }
-            
+            NamePicker.reloadAllComponents()
+            AsignmentPicker.reloadAllComponents()
         }
         NamePicker.reloadAllComponents()
         AsignmentPicker.reloadAllComponents()
         }
 // MARK: Add Name func
     func addNameToGroup(){
-        let nameObject = UserDefaults.standard.object(forKey: "Name" + whatGroup)
+        let nameObject = UserDefaults.standard.object(forKey: "Name" + whatGroup)  as? [String]
         
         var NameForGroup: [String]
         
-        if let tempItems = nameObject as? [String] {
+        if let tempItems = nameObject {
             
             NameForGroup = tempItems
             
@@ -166,6 +170,8 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         namesForEachGroup = NameForGroup
         print("saved to group")
         EnteredObjectTextFeild.text = ""
+        NamePicker.reloadAllComponents()
+        AsignmentPicker.reloadAllComponents()
     }
 // MARK: - PickerView setup
         func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -213,9 +219,9 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         override func viewDidLoad() {
             super.viewDidLoad()
             // Do any additional setup after loading the view.
-            let NamesObject = UserDefaults.standard.object(forKey: "Name" + whatGroup)
+            let NamesObject = UserDefaults.standard.object(forKey: "Name" + whatGroup)  as? [String]
             
-            if let tempItems = NamesObject as? [String] {
+            if let tempItems = NamesObject {
                 
                 namesForEachGroup = tempItems
                 
@@ -246,8 +252,8 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                 AsignmentPicker.isHidden = true
                 NamePicker.isHidden = true
             }
-            let NameObject = UserDefaults.standard.object(forKey: "Name")
-            if let tempItems = NameObject as? [String] {
+            let NameObject = UserDefaults.standard.object(forKey: "Name") as? [String]
+            if let tempItems = NameObject {
                 AllNames = tempItems
                 print(AllNames)
                 
@@ -256,6 +262,12 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             }
             IsAddingAssignment = true
         }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if isInMain == true {
+            
+        }
+        
+    }
 // MARK: - costome stuff
     func AlertAction(Title: String, Message: String, alerTitle: String) {
         // create the alert

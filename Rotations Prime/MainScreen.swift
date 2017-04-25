@@ -19,17 +19,13 @@ class mainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var ifNoPerson = "No Person"
     
 // MARK: - Outlet Setup
-    @IBOutlet weak var addButtonOu: UIBarButtonItem!
+
     @IBOutlet weak var tableview: UITableView!
 // MARK: - Action Setup
    
     @IBAction func Edit(_ sender: UIBarButtonItem) {
         isAddingName = 3
         performSegue(withIdentifier: "whatsUp", sender: UIBarButtonItem())
-    }
-    @IBAction func BackButton(_ sender: UIBarButtonItem) {
-        isAddingName = 2
-        performSegue(withIdentifier: "BackButtonPressed", sender: UIBarButtonItem())
     }
     @IBAction func addPersonPressed(_ sender: UIBarButtonItem) {
         isAddingName = 1
@@ -62,7 +58,12 @@ class mainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
+        
         tableview.allowsSelection = false
+        tableview.reloadData()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        tableview.reloadData()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if isAddingName == 1 {
@@ -141,6 +142,10 @@ class mainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
             UserDefaults.standard.set(allPeople, forKey: "Name" + whatGroup)
             tableview.reloadData()
         }
+    }
+    func loadList(notification: NSNotification){
+        //load data here
+        tableview.reloadData()
     }
     
 

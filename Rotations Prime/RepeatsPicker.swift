@@ -8,24 +8,50 @@
 
 import UIKit
 
-class RepeatsPicker: UITableViewController {
+class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var firstPickerView: UIPickerView!
-    
     @IBOutlet weak var detailLable: UILabel!
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "EditTimesToEdit", sender: UIBarButtonItem())
     }
-    
-    //    @IBAction func datePickerValue(sender: UIPickerView) {
-    //        datePickerChanged(row: firstPickerView.selectedRow(inComponent: 1))
-    //    }
-    var myArray = ["Hourly", "Daily", "Weekly", "Monthly", "Yearly"]
+    var myArray = ["Hourly", "Daily"]
     var myArray2 = [String]()
-    
+    var isPickerOpen = false
+// MARK: - system stuff
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        datePickerChanged(row: 1)
+        firstPickerView.dataSource = self
+        firstPickerView.delegate = self
+    }
+    
+// MARK: - table view setup
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (indexPath.section == 0 && indexPath.row == 1) {
+            if (self.isPickerOpen) {
+                firstPickerView.isHidden = false
+                return 216;
+            } else {
+                firstPickerView.isHidden = true
+                return 0;
+            }
+        } else {
+            return super.tableView(tableView, heightForRowAt: indexPath)
+        }
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.section == 0 && indexPath.row == 0) {
+            tableView.beginUpdates()
+            
+            self.isPickerOpen = !self.isPickerOpen // toggle the state
+            // this causes the cell height to be re-evaluated and therefore changed based on the new boolean state.
+            super.tableView(tableView, heightForRowAt: indexPath)
+            tableView.endUpdates()
+        }
+    }
+// MARK: - pickerViewSetup
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch pickerView.tag {
@@ -55,31 +81,6 @@ class RepeatsPicker: UITableViewController {
             myArray2 = [""]
         }
     }
-    var datePickerHidden = false
+// MARK: - custome functions
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if datePickerHidden && indexPath.section == 0 && indexPath.row == 1 {
-            return 0
-        }
-        else {
-            return tableView.rowHeight
-            // MARK: this might not work
-        }
-    }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 0 && indexPath.row == 0 {
-            toggleDatepicker()
-        }
-    }
-    func toggleDatepicker() {
-        
-        datePickerHidden = !datePickerHidden
-        
-        tableView.beginUpdates()
-        tableView.endUpdates()
-        
-    }
-    func datePickerChanged (row: Int) {
-        detailLable.text = myArray[row]
-    }
 }

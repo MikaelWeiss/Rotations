@@ -50,13 +50,36 @@
                                         <rect key="frame" x="0.0" y="44" width="320" height="224"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pzw-gA-Ccd" id="ku5-c8-Xc0">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="223.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="224"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P4E-Q3-96t">
-                                                    <rect key="frame" x="0.0" y="8" width="320" height="207"/>
+                                                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hio-hx-Twt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 </pickerView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="UkL-Vc-iRI">
+                                        <rect key="frame" x="0.0" y="268" width="320" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UkL-Vc-iRI" id="1ON-Jb-yg9">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="of1-JV-4LU">
+                                                    <rect key="frame" x="8" y="8" width="304" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <segments>
+                                                        <segment title="SU"/>
+                                                        <segment title="MO"/>
+                                                        <segment title="TU"/>
+                                                        <segment title="WE"/>
+                                                        <segment title="TH"/>
+                                                        <segment title="FR"/>
+                                                        <segment title="SA"/>
+                                                    </segments>
+                                                </segmentedControl>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -79,7 +102,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="detailLable" destination="TvJ-3j-uPl" id="ZJ4-Fx-VaU"/>
-                        <outlet property="firstPickerView" destination="P4E-Q3-96t" id="kmc-fL-HxR"/>
+                        <outlet property="firstPickerView" destination="hio-hx-Twt" id="Tuv-ND-Af3"/>
                         <segue destination="bjH-xx-CMg" kind="unwind" identifier="EditTimesToEdit" unwindAction="GoToEditWithSegue:" id="TT5-4u-Sx5"/>
                     </connections>
                 </tableViewController>
@@ -158,10 +181,9 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="addButtonOu" destination="P0c-ce-E7N" id="0oB-zs-1Hi"/>
                         <outlet property="tableview" destination="gGl-fH-7lX" id="wc4-rk-DHp"/>
                         <segue destination="eUd-My-XnP" kind="unwind" identifier="BackButtonPressed" unwindAction="goToGroupScreenSegueWithSegue:" id="pwd-bd-kdP"/>
-                        <segue destination="eIz-gm-FLx" kind="presentation" identifier="AddPerson" modalPresentationStyle="formSheet" modalTransitionStyle="flipHorizontal" id="3UQ-YV-1eL"/>
+                        <segue destination="eIz-gm-FLx" kind="presentation" identifier="AddPerson" modalPresentationStyle="formSheet" id="3UQ-YV-1eL"/>
                         <segue destination="3Sf-Pf-ARl" kind="show" identifier="whatsUp" id="CLM-0D-VC6"/>
                     </connections>
                 </viewController>
@@ -190,7 +212,7 @@
                                 </constraints>
                                 <state key="normal" title="Done"/>
                                 <connections>
-                                    <action selector="BackPressed:" destination="eIz-gm-FLx" eventType="touchUpInside" id="7MU-Qj-dKP"/>
+                                    <action selector="donePressed:" destination="eIz-gm-FLx" eventType="touchUpInside" id="awG-YP-d7I"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6w-ya-dMQ">
@@ -371,6 +393,7 @@
                     <navigationItem key="navigationItem" title="Edit" id="nSn-MS-SYx">
                         <barButtonItem key="rightBarButtonItem" title="Repeats" id="Qcg-zx-vWv">
                             <connections>
+                                <action selector="RepeatsButton:" destination="3Sf-Pf-ARl" id="gV3-U1-4hZ"/>
                                 <segue destination="46V-eR-3ad" kind="popoverPresentation" identifier="editTimesSegue" popoverAnchorBarButtonItem="Qcg-zx-vWv" id="KYF-l3-zLQ">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
@@ -423,6 +446,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="a46-YH-bXz"/>
+        <segue reference="3UQ-YV-1eL"/>
     </inferredMetricsTieBreakers>
 </document>

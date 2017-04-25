@@ -14,9 +14,16 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var whatGroup = ""
     var whatNameName = ""
     var whatNameAssignments = ""
+    var isAddingName = 1
+    
+    
+    @IBAction func RepeatsButton(_ sender: UIBarButtonItem) {
+        isAddingName = 2
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         myTableView.allowsSelection = false
         
         let NamesObject = UserDefaults.standard.object(forKey: "Name" + whatGroup)
@@ -35,6 +42,8 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             print("saved data in main (Assignments)")
         }
+        
+        self.navigationItem.leftItemsSupplementBackButton = true
         
     }
 // MARK: - Table View Setup
@@ -113,6 +122,8 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+// MARK: - custome functions
+    
 // MARK: - Exit segue
     @IBAction func GoToEdit(Segue: UIStoryboardSegue) {
         myTableView.reloadData()
