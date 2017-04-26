@@ -10,6 +10,20 @@
 		D42B131C1E97BE38002AA9B1 /* RepeatsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42B131B1E97BE38002AA9B1 /* RepeatsPicker.swift */; };
 		D4872D821E76E00D0077D05F /* addPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4872D811E76E00D0077D05F /* addPersonView.swift */; };
 		D4872D861E78A4A60077D05F /* groupSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4872D851E78A4A60077D05F /* groupSelect.swift */; };
+		D48F47E01EB0C99E00B5C627 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D48F47DE1EB0C99E00B5C627 /* Interface.storyboard */; };
+		D48F47E21EB0C99E00B5C627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48F47E11EB0C99E00B5C627 /* Assets.xcassets */; };
+		D48F47E91EB0C99E00B5C627 /* Rotations Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D48F47E81EB0C99E00B5C627 /* Rotations Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D48F47F01EB0C99E00B5C627 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F47EF1EB0C99E00B5C627 /* InterfaceController.swift */; };
+		D48F47F21EB0C99E00B5C627 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F47F11EB0C99E00B5C627 /* ExtensionDelegate.swift */; };
+		D48F47F41EB0C99E00B5C627 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F47F31EB0C99E00B5C627 /* NotificationController.swift */; };
+		D48F47F61EB0C99E00B5C627 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48F47F51EB0C99E00B5C627 /* Assets.xcassets */; };
+		D48F47FA1EB0C99E00B5C627 /* Rotations.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D48F47DC1EB0C99E00B5C627 /* Rotations.app */; };
+		D48F480A1EB0DC5600B5C627 /* tableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F48091EB0DC5600B5C627 /* tableRowController.swift */; };
+		D48F480B1EB0DC5600B5C627 /* tableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F48091EB0DC5600B5C627 /* tableRowController.swift */; };
+		D48F480D1EB0DE8700B5C627 /* groupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F480C1EB0DE8700B5C627 /* groupCell.swift */; };
+		D48F480E1EB0DE8700B5C627 /* groupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F480C1EB0DE8700B5C627 /* groupCell.swift */; };
+		D48F48101EB0DEBC00B5C627 /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F480F1EB0DEBC00B5C627 /* GroupView.swift */; };
+		D48F48111EB0DEBC00B5C627 /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48F480F1EB0DEBC00B5C627 /* GroupView.swift */; };
 		D4E0131D1E93E40F00F2246E /* EditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0131C1E93E40F00F2246E /* EditScreen.swift */; };
 		D4FBC5021E0F62E600D5A088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FBC5011E0F62E600D5A088 /* AppDelegate.swift */; };
 		D4FBC5041E0F62E600D5A088 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FBC5031E0F62E600D5A088 /* MainScreen.swift */; };
@@ -18,10 +32,66 @@
 		D4FBC50C1E0F62E600D5A088 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4FBC50A1E0F62E600D5A088 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D48F47EA1EB0C99E00B5C627 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4FBC4F61E0F62E300D5A088 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D48F47E71EB0C99E00B5C627;
+			remoteInfo = "Rotations Extension";
+		};
+		D48F47F81EB0C99E00B5C627 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4FBC4F61E0F62E300D5A088 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D48F47DB1EB0C99E00B5C627;
+			remoteInfo = Rotations;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D48F48001EB0C99E00B5C627 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D48F47E91EB0C99E00B5C627 /* Rotations Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D48F48021EB0C99E00B5C627 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				D48F47FA1EB0C99E00B5C627 /* Rotations.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		D42B131B1E97BE38002AA9B1 /* RepeatsPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatsPicker.swift; sourceTree = "<group>"; };
 		D4872D811E76E00D0077D05F /* addPersonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addPersonView.swift; sourceTree = "<group>"; };
 		D4872D851E78A4A60077D05F /* groupSelect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupSelect.swift; sourceTree = "<group>"; };
+		D48F47DC1EB0C99E00B5C627 /* Rotations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rotations.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D48F47DF1EB0C99E00B5C627 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		D48F47E11EB0C99E00B5C627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D48F47E31EB0C99E00B5C627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D48F47E81EB0C99E00B5C627 /* Rotations Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Rotations Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D48F47EE1EB0C99E00B5C627 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		D48F47EF1EB0C99E00B5C627 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		D48F47F11EB0C99E00B5C627 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		D48F47F31EB0C99E00B5C627 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		D48F47F51EB0C99E00B5C627 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D48F47F71EB0C99E00B5C627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D48F48091EB0DC5600B5C627 /* tableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tableRowController.swift; sourceTree = "<group>"; };
+		D48F480C1EB0DE8700B5C627 /* groupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = groupCell.swift; path = "Rotations Extension/groupCell.swift"; sourceTree = SOURCE_ROOT; };
+		D48F480F1EB0DEBC00B5C627 /* GroupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupView.swift; path = "Rotations Extension/GroupView.swift"; sourceTree = "<group>"; };
 		D4E0131C1E93E40F00F2246E /* EditScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditScreen.swift; sourceTree = "<group>"; };
 		D4FBC4FE1E0F62E600D5A088 /* Rotations Prime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rotations Prime.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4FBC5011E0F62E600D5A088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +103,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D48F47E51EB0C99E00B5C627 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4FBC4FB1E0F62E400D5A088 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -65,10 +142,46 @@
 			name = Extras;
 			sourceTree = "<group>";
 		};
+		D48F47DD1EB0C99E00B5C627 /* Rotations */ = {
+			isa = PBXGroup;
+			children = (
+				D48F47DE1EB0C99E00B5C627 /* Interface.storyboard */,
+				D48F47E11EB0C99E00B5C627 /* Assets.xcassets */,
+				D48F47E31EB0C99E00B5C627 /* Info.plist */,
+			);
+			path = Rotations;
+			sourceTree = "<group>";
+		};
+		D48F47EC1EB0C99E00B5C627 /* Rotations Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D48F480C1EB0DE8700B5C627 /* groupCell.swift */,
+				D48F48091EB0DC5600B5C627 /* tableRowController.swift */,
+				D48F47EF1EB0C99E00B5C627 /* InterfaceController.swift */,
+				D48F47F11EB0C99E00B5C627 /* ExtensionDelegate.swift */,
+				D48F47F31EB0C99E00B5C627 /* NotificationController.swift */,
+				D48F47F51EB0C99E00B5C627 /* Assets.xcassets */,
+				D48F47F71EB0C99E00B5C627 /* Info.plist */,
+				D48F47ED1EB0C99E00B5C627 /* Supporting Files */,
+			);
+			path = "Rotations Extension";
+			sourceTree = "<group>";
+		};
+		D48F47ED1EB0C99E00B5C627 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D48F47EE1EB0C99E00B5C627 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		D4FBC4F51E0F62E300D5A088 = {
 			isa = PBXGroup;
 			children = (
+				D48F480F1EB0DEBC00B5C627 /* GroupView.swift */,
 				D4FBC5001E0F62E600D5A088 /* Rotations Prime */,
+				D48F47DD1EB0C99E00B5C627 /* Rotations */,
+				D48F47EC1EB0C99E00B5C627 /* Rotations Extension */,
 				D4FBC4FF1E0F62E600D5A088 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				D4FBC4FE1E0F62E600D5A088 /* Rotations Prime.app */,
+				D48F47DC1EB0C99E00B5C627 /* Rotations.app */,
+				D48F47E81EB0C99E00B5C627 /* Rotations Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +210,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D48F47DB1EB0C99E00B5C627 /* Rotations */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D48F48011EB0C99E00B5C627 /* Build configuration list for PBXNativeTarget "Rotations" */;
+			buildPhases = (
+				D48F47DA1EB0C99E00B5C627 /* Resources */,
+				D48F48001EB0C99E00B5C627 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D48F47EB1EB0C99E00B5C627 /* PBXTargetDependency */,
+			);
+			name = Rotations;
+			productName = Rotations;
+			productReference = D48F47DC1EB0C99E00B5C627 /* Rotations.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		D48F47E71EB0C99E00B5C627 /* Rotations Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D48F47FF1EB0C99E00B5C627 /* Build configuration list for PBXNativeTarget "Rotations Extension" */;
+			buildPhases = (
+				D48F47E41EB0C99E00B5C627 /* Sources */,
+				D48F47E51EB0C99E00B5C627 /* Frameworks */,
+				D48F47E61EB0C99E00B5C627 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Rotations Extension";
+			productName = "Rotations Extension";
+			productReference = D48F47E81EB0C99E00B5C627 /* Rotations Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		D4FBC4FD1E0F62E400D5A088 /* Rotations Prime */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4FBC5101E0F62E700D5A088 /* Build configuration list for PBXNativeTarget "Rotations Prime" */;
@@ -102,10 +251,12 @@
 				D4FBC4FA1E0F62E400D5A088 /* Sources */,
 				D4FBC4FB1E0F62E400D5A088 /* Frameworks */,
 				D4FBC4FC1E0F62E400D5A088 /* Resources */,
+				D48F48021EB0C99E00B5C627 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D48F47F91EB0C99E00B5C627 /* PBXTargetDependency */,
 			);
 			name = "Rotations Prime";
 			productName = "Rotations Prime";
@@ -118,10 +269,21 @@
 		D4FBC4F61E0F62E300D5A088 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Mikael Weiss";
 				TargetAttributes = {
+					D48F47DB1EB0C99E00B5C627 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = X7WM6K9T24;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+					D48F47E71EB0C99E00B5C627 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = X7WM6K9T24;
+						ProvisioningStyle = Automatic;
+					};
 					D4FBC4FD1E0F62E400D5A088 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = X7WM6K9T24;
@@ -143,11 +305,30 @@
 			projectRoot = "";
 			targets = (
 				D4FBC4FD1E0F62E400D5A088 /* Rotations Prime */,
+				D48F47DB1EB0C99E00B5C627 /* Rotations */,
+				D48F47E71EB0C99E00B5C627 /* Rotations Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D48F47DA1EB0C99E00B5C627 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D48F47E21EB0C99E00B5C627 /* Assets.xcassets in Resources */,
+				D48F47E01EB0C99E00B5C627 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D48F47E61EB0C99E00B5C627 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D48F47F61EB0C99E00B5C627 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4FBC4FC1E0F62E400D5A088 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -161,22 +342,59 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D48F47E41EB0C99E00B5C627 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D48F47F41EB0C99E00B5C627 /* NotificationController.swift in Sources */,
+				D48F47F21EB0C99E00B5C627 /* ExtensionDelegate.swift in Sources */,
+				D48F48111EB0DEBC00B5C627 /* GroupView.swift in Sources */,
+				D48F47F01EB0C99E00B5C627 /* InterfaceController.swift in Sources */,
+				D48F480B1EB0DC5600B5C627 /* tableRowController.swift in Sources */,
+				D48F480E1EB0DE8700B5C627 /* groupCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4FBC4FA1E0F62E400D5A088 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D48F480A1EB0DC5600B5C627 /* tableRowController.swift in Sources */,
 				D4FBC5041E0F62E600D5A088 /* MainScreen.swift in Sources */,
+				D48F48101EB0DEBC00B5C627 /* GroupView.swift in Sources */,
 				D42B131C1E97BE38002AA9B1 /* RepeatsPicker.swift in Sources */,
 				D4872D821E76E00D0077D05F /* addPersonView.swift in Sources */,
 				D4FBC5021E0F62E600D5A088 /* AppDelegate.swift in Sources */,
 				D4E0131D1E93E40F00F2246E /* EditScreen.swift in Sources */,
 				D4872D861E78A4A60077D05F /* groupSelect.swift in Sources */,
+				D48F480D1EB0DE8700B5C627 /* groupCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D48F47EB1EB0C99E00B5C627 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D48F47E71EB0C99E00B5C627 /* Rotations Extension */;
+			targetProxy = D48F47EA1EB0C99E00B5C627 /* PBXContainerItemProxy */;
+		};
+		D48F47F91EB0C99E00B5C627 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D48F47DB1EB0C99E00B5C627 /* Rotations */;
+			targetProxy = D48F47F81EB0C99E00B5C627 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		D48F47DE1EB0C99E00B5C627 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D48F47DF1EB0C99E00B5C627 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		D4FBC5051E0F62E600D5A088 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -196,6 +414,85 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D48F47FB1EB0C99E00B5C627 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = X7WM6K9T24;
+				IBSC_MODULE = Rotations_Extension;
+				INFOPLIST_FILE = Rotations/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MikeStudios.Rotations-Prime.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		D48F47FC1EB0C99E00B5C627 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = X7WM6K9T24;
+				IBSC_MODULE = Rotations_Extension;
+				INFOPLIST_FILE = Rotations/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MikeStudios.Rotations-Prime.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
+		D48F47FD1EB0C99E00B5C627 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = X7WM6K9T24;
+				INFOPLIST_FILE = "Rotations Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MikeStudios.Rotations-Prime.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Debug;
+		};
+		D48F47FE1EB0C99E00B5C627 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = X7WM6K9T24;
+				INFOPLIST_FILE = "Rotations Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MikeStudios.Rotations-Prime.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
+			};
+			name = Release;
+		};
 		D4FBC50E1E0F62E700D5A088 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -318,6 +615,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D48F47FF1EB0C99E00B5C627 /* Build configuration list for PBXNativeTarget "Rotations Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D48F47FD1EB0C99E00B5C627 /* Debug */,
+				D48F47FE1EB0C99E00B5C627 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D48F48011EB0C99E00B5C627 /* Build configuration list for PBXNativeTarget "Rotations" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D48F47FB1EB0C99E00B5C627 /* Debug */,
+				D48F47FC1EB0C99E00B5C627 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D4FBC4F91E0F62E300D5A088 /* Build configuration list for PBXProject "Rotations Prime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

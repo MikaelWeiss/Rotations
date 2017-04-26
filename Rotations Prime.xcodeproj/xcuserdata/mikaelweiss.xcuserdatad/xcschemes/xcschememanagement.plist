@@ -4,14 +4,29 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Rotations (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>Rotations Prime.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Rotations.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>D48F47DB1EB0C99E00B5C627</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D4FBC4FD1E0F62E400D5A088</key>
 		<dict>
 			<key>primary</key>
