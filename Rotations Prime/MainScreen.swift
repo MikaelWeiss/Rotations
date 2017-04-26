@@ -101,7 +101,7 @@ class mainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
 // MARK: - the Exit Segue
     @IBAction func exitSegue(segue: UIStoryboardSegue) {
         allPeople = UserDefaults.standard.array(forKey: "Name" + whatGroup) as! [String]
-        theAssignments = UserDefaults.standard.array(forKey: whatGroup + "Assignments") as! [String]
+        theAssignments = UserDefaults.standard.array(forKey: whatGroup + "Assignment") as! [String]
         tableview.reloadData()
         isAddingName = 2
         print("Exited to main")

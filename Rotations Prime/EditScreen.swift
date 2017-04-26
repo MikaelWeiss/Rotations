@@ -102,7 +102,7 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 tableView.deleteRows(at: [indexPath], with: .fade)
                 tableView.reloadData()
                 
-                UserDefaults.standard.set(PeopleForGroup, forKey: whatGroup + "Assignment")
+                UserDefaults.standard.set(theAssignments, forKey: whatGroup + "Assignment")
                 UserDefaults.standard.set(PeopleForGroup, forKey: "Name" + whatGroup)
                 print(PeopleForGroup)
             } else if editingStyle == .insert {
