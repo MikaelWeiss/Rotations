@@ -54,9 +54,13 @@ class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate 
             GroupTableView.reloadData()
             
             UserDefaults.standard.set(theGroups, forKey: "Groups")
+            if UserDefaults.standard.object(forKey: "Name" + whatGroup) != nil {
+                UserDefaults.standard.removeObject(forKey: "Name" + whatGroup)
+            }
+            if UserDefaults.standard.object(forKey: whatGroup + "Assignment") != nil {
+                UserDefaults.standard.removeObject(forKey: whatGroup + "Assignment")
+            }
             
-            UserDefaults.standard.set(emptyArray, forKey: "Name" + whatGroup)
-            UserDefaults.standard.set(emptyArray, forKey: whatGroup + "Assignment")
             print(theGroups)
         }
     }

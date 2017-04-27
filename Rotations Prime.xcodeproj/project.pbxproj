@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D400D30C1EB13680000A723D /* RotationsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D400D30B1EB13680000A723D /* RotationsUITests.swift */; };
 		D42B131C1E97BE38002AA9B1 /* RepeatsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42B131B1E97BE38002AA9B1 /* RepeatsPicker.swift */; };
 		D4872D821E76E00D0077D05F /* addPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4872D811E76E00D0077D05F /* addPersonView.swift */; };
 		D4872D861E78A4A60077D05F /* groupSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4872D851E78A4A60077D05F /* groupSelect.swift */; };
@@ -18,7 +19,20 @@
 		D4FBC50C1E0F62E600D5A088 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4FBC50A1E0F62E600D5A088 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D400D30E1EB13680000A723D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4FBC4F61E0F62E300D5A088 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4FBC4FD1E0F62E400D5A088;
+			remoteInfo = "Rotations Prime";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		D400D3091EB13680000A723D /* RotationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RotationsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D400D30B1EB13680000A723D /* RotationsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationsUITests.swift; sourceTree = "<group>"; };
+		D400D30D1EB13680000A723D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D42B131B1E97BE38002AA9B1 /* RepeatsPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatsPicker.swift; sourceTree = "<group>"; };
 		D4872D811E76E00D0077D05F /* addPersonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addPersonView.swift; sourceTree = "<group>"; };
 		D4872D851E78A4A60077D05F /* groupSelect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupSelect.swift; sourceTree = "<group>"; };
@@ -33,6 +47,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D400D3061EB13680000A723D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4FBC4FB1E0F62E400D5A088 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -43,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D400D30A1EB13680000A723D /* RotationsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D400D30B1EB13680000A723D /* RotationsUITests.swift */,
+				D400D30D1EB13680000A723D /* Info.plist */,
+			);
+			path = RotationsUITests;
+			sourceTree = "<group>";
+		};
 		D40C9A831E6DA10A0043EB2A /* Controlor */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				D4FBC5001E0F62E600D5A088 /* Rotations Prime */,
+				D400D30A1EB13680000A723D /* RotationsUITests */,
 				D4FBC4FF1E0F62E600D5A088 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				D4FBC4FE1E0F62E600D5A088 /* Rotations Prime.app */,
+				D400D3091EB13680000A723D /* RotationsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +127,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D400D3081EB13680000A723D /* RotationsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D400D3121EB13680000A723D /* Build configuration list for PBXNativeTarget "RotationsUITests" */;
+			buildPhases = (
+				D400D3051EB13680000A723D /* Sources */,
+				D400D3061EB13680000A723D /* Frameworks */,
+				D400D3071EB13680000A723D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D400D30F1EB13680000A723D /* PBXTargetDependency */,
+			);
+			name = RotationsUITests;
+			productName = RotationsUITests;
+			productReference = D400D3091EB13680000A723D /* RotationsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		D4FBC4FD1E0F62E400D5A088 /* Rotations Prime */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4FBC5101E0F62E700D5A088 /* Build configuration list for PBXNativeTarget "Rotations Prime" */;
@@ -118,10 +168,16 @@
 		D4FBC4F61E0F62E300D5A088 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Mikael Weiss";
 				TargetAttributes = {
+					D400D3081EB13680000A723D = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = X7WM6K9T24;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D4FBC4FD1E0F62E400D5A088;
+					};
 					D4FBC4FD1E0F62E400D5A088 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = X7WM6K9T24;
@@ -143,11 +199,19 @@
 			projectRoot = "";
 			targets = (
 				D4FBC4FD1E0F62E400D5A088 /* Rotations Prime */,
+				D400D3081EB13680000A723D /* RotationsUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D400D3071EB13680000A723D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4FBC4FC1E0F62E400D5A088 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -161,6 +225,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D400D3051EB13680000A723D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D400D30C1EB13680000A723D /* RotationsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4FBC4FA1E0F62E400D5A088 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,6 +247,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D400D30F1EB13680000A723D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4FBC4FD1E0F62E400D5A088 /* Rotations Prime */;
+			targetProxy = D400D30E1EB13680000A723D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D4FBC5051E0F62E600D5A088 /* Main.storyboard */ = {
@@ -196,6 +276,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D400D3101EB13680000A723D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = X7WM6K9T24;
+				INFOPLIST_FILE = RotationsUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MikeStudios.RotationsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Rotations Prime";
+			};
+			name = Debug;
+		};
+		D400D3111EB13680000A723D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = X7WM6K9T24;
+				INFOPLIST_FILE = RotationsUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MikeStudios.RotationsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Rotations Prime";
+			};
+			name = Release;
+		};
 		D4FBC50E1E0F62E700D5A088 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -318,6 +428,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D400D3121EB13680000A723D /* Build configuration list for PBXNativeTarget "RotationsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D400D3101EB13680000A723D /* Debug */,
+				D400D3111EB13680000A723D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D4FBC4F91E0F62E300D5A088 /* Build configuration list for PBXProject "Rotations Prime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
