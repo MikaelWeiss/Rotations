@@ -30,6 +30,54 @@ class RotationsUITests: XCTestCase {
     
     func testNormalUse() {
         
+        let app = XCUIApplication()
+        let addButton = app.navigationBars["Groups"].buttons["Add"]
+        addButton.tap()
+        
+        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element
+        let textField = element.children(matching: .textField).element
+        textField.tap()
+        
+        let doneButton = app.buttons["Done"]
+        doneButton.tap()
+        addButton.tap()
+        textField.tap()
+        textField.typeText("asdf")
+        
+        let saveButton = app.buttons["Save"]
+        saveButton.tap()
+        doneButton.tap()
+        
+        
+        let asdfStaticText = app.tables.cells.staticTexts["asdf"]
+        asdfStaticText.tap()
+        
+        let rotationsNavigationBar = app.navigationBars["Rotations"]
+        rotationsNavigationBar.buttons["Add"].tap()
+        textField.tap()
+        textField.typeText("say whats up")
+        saveButton.tap()
+        
+        let app2 = app
+        app2.pickerWheels["Assignment"].swipeUp()
+        textField.tap()
+        textField.typeText("mikael")
+        saveButton.tap()
+        doneButton.tap()
+        rotationsNavigationBar.buttons["Edit"].tap()
+        
+        let tablesQuery = app2.tables
+        let mikaelStaticText = tablesQuery.staticTexts["mikael"]
+        mikaelStaticText.swipeLeft()
+        
+        let deleteButton = tablesQuery.buttons["Delete"]
+        deleteButton.tap()
+        
+        app.navigationBars["Edit"].buttons["Rotations"].tap()
+        rotationsNavigationBar.buttons["Groups"].tap()
+        asdfStaticText.swipeLeft()
+        deleteButton.tap()
+        
         
         
     }
