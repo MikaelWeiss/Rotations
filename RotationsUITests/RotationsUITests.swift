@@ -30,6 +30,8 @@ class RotationsUITests: XCTestCase {
     
     func testNormalUse() {
         
+        
+        
     }
     
 }
