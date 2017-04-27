@@ -100,7 +100,9 @@ class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
 // MARK: get to groups segue
     @IBAction func goToGroupScreenSegue(Segue: UIStoryboardSegue) {
-        theGroups = UserDefaults.standard.array(forKey: "Groups") as! [String]
+        if UserDefaults.standard.object(forKey: "Groups") != nil {
+            theGroups = UserDefaults.standard.array(forKey: "Groups") as! [String]
+        }
         GroupTableView.reloadData()
     }
     

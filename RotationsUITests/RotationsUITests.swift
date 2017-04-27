@@ -73,6 +73,14 @@ class RotationsUITests: XCTestCase {
         let deleteButton = tablesQuery.buttons["Delete"]
         deleteButton.tap()
         
+        let tablesQuery2 = app2.tables
+        let SayWhatsUpStaticText = tablesQuery2.staticTexts["so up"]
+        SayWhatsUpStaticText.swipeLeft()
+        
+        let deleteButton2 = tablesQuery2.buttons["Delete"]
+        deleteButton2.tap()
+        
+        
         app.navigationBars["Edit"].buttons["Rotations"].tap()
         rotationsNavigationBar.buttons["Groups"].tap()
         asdfStaticText.swipeLeft()
