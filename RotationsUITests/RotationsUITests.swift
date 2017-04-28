@@ -58,28 +58,41 @@ class RotationsUITests: XCTestCase {
         textField.typeText("say whats up")
         saveButton.tap()
         
-        let app2 = app
-        app2.pickerWheels["Assignment"].swipeUp()
+        app.pickerWheels["Assignment"].swipeUp()
         textField.tap()
         textField.typeText("mikael")
         saveButton.tap()
         doneButton.tap()
         rotationsNavigationBar.buttons["Edit"].tap()
         
-        let tablesQuery = app2.tables
+        let tablesQuery = app.tables
         let mikaelStaticText = tablesQuery.staticTexts["mikael"]
         mikaelStaticText.swipeLeft()
         
         let deleteButton = tablesQuery.buttons["Delete"]
         deleteButton.tap()
         
-        let tablesQuery2 = app2.tables
+        let tablesQuery2 = app.tables
         let SayWhatsUpStaticText = tablesQuery2.staticTexts["so up"]
         SayWhatsUpStaticText.swipeLeft()
         
         let deleteButton2 = tablesQuery2.buttons["Delete"]
         deleteButton2.tap()
         
+        XCUIApplication().navigationBars["Edit"].buttons["Repeats"].tap()
+        
+        let tablesQuery3 = app.tables
+        tablesQuery3.buttons["MO"].tap()
+        tablesQuery3.buttons["TU"].tap()
+        tablesQuery3.buttons["WE"].tap()
+        tablesQuery3.buttons["TH"].tap()
+        tablesQuery3.buttons["FR"].tap()
+        tablesQuery3.buttons["SA"].tap()
+        tablesQuery3.buttons["SU"].tap()
+        
+        let repeatsNavigationBar = app.navigationBars["Repeats"]
+//        repeatsNavigationBar.buttons["Save"].tap()
+        repeatsNavigationBar.buttons["Cancel"].tap()
         
         app.navigationBars["Edit"].buttons["Rotations"].tap()
         rotationsNavigationBar.buttons["Groups"].tap()
