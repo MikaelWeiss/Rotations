@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3124BB55B7A01751EA303D6 /* Pods_Rotations_Prime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE6D9182A9C6CBFA737B5899 /* Pods_Rotations_Prime.framework */; };
 		D400D30C1EB13680000A723D /* RotationsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D400D30B1EB13680000A723D /* RotationsUITests.swift */; };
 		D42B131C1E97BE38002AA9B1 /* RepeatsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42B131B1E97BE38002AA9B1 /* RepeatsPicker.swift */; };
 		D4872D821E76E00D0077D05F /* addPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4872D811E76E00D0077D05F /* addPersonView.swift */; };
@@ -30,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		60D99BB35E0173E8161B1F05 /* Pods-Rotations Prime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rotations Prime.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rotations Prime/Pods-Rotations Prime.release.xcconfig"; sourceTree = "<group>"; };
+		86E32DCB957AAEC4935E04C6 /* Pods-Rotations Prime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rotations Prime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rotations Prime/Pods-Rotations Prime.debug.xcconfig"; sourceTree = "<group>"; };
 		D400D3091EB13680000A723D /* RotationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RotationsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D400D30B1EB13680000A723D /* RotationsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationsUITests.swift; sourceTree = "<group>"; };
 		D400D30D1EB13680000A723D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 		D4FBC5081E0F62E600D5A088 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4FBC50B1E0F62E600D5A088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4FBC50D1E0F62E700D5A088 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE6D9182A9C6CBFA737B5899 /* Pods_Rotations_Prime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rotations_Prime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,12 +62,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3124BB55B7A01751EA303D6 /* Pods_Rotations_Prime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E1203364E50AC7EF2FAA683 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE6D9182A9C6CBFA737B5899 /* Pods_Rotations_Prime.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5087384AB08E6583A4997FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86E32DCB957AAEC4935E04C6 /* Pods-Rotations Prime.debug.xcconfig */,
+				60D99BB35E0173E8161B1F05 /* Pods-Rotations Prime.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D400D30A1EB13680000A723D /* RotationsUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +130,8 @@
 				D4FBC5001E0F62E600D5A088 /* Rotations Prime */,
 				D400D30A1EB13680000A723D /* RotationsUITests */,
 				D4FBC4FF1E0F62E600D5A088 /* Products */,
+				B5087384AB08E6583A4997FD /* Pods */,
+				6E1203364E50AC7EF2FAA683 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,9 +181,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4FBC5101E0F62E700D5A088 /* Build configuration list for PBXNativeTarget "Rotations Prime" */;
 			buildPhases = (
+				E4F90D9378AB400B762A83A6 /* [CP] Check Pods Manifest.lock */,
 				D4FBC4FA1E0F62E400D5A088 /* Sources */,
 				D4FBC4FB1E0F62E400D5A088 /* Frameworks */,
 				D4FBC4FC1E0F62E400D5A088 /* Resources */,
+				8824E8E48F9CB1D9ED59D316 /* [CP] Embed Pods Frameworks */,
+				5873E1F45841A114511A081F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,6 +258,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5873E1F45841A114511A081F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rotations Prime/Pods-Rotations Prime-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8824E8E48F9CB1D9ED59D316 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rotations Prime/Pods-Rotations Prime-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4F90D9378AB400B762A83A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D400D3051EB13680000A723D /* Sources */ = {
@@ -409,6 +484,7 @@
 		};
 		D4FBC5111E0F62E700D5A088 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86E32DCB957AAEC4935E04C6 /* Pods-Rotations Prime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X7WM6K9T24;
@@ -422,6 +498,7 @@
 		};
 		D4FBC5121E0F62E700D5A088 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60D99BB35E0173E8161B1F05 /* Pods-Rotations Prime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X7WM6K9T24;

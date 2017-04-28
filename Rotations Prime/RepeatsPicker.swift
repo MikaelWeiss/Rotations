@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ATHMultiSelectionSegmentedControl
 
 class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var firstPickerView: UIPickerView!
@@ -84,5 +85,19 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
         }
     }
 // MARK: - custome functions
-    
+    func multiSelectionSegmentedControl(_ control: MultiSelectionSegmentedControl, selectedIndices indices: [Int]) {
+        
+        selectedIndicesLabel.text = "Selected Indices: ["
+        
+        for index in indices {
+            selectedIndicesLabel.text?.append("\(String(index)),")
+        }
+        
+        if indices.count != 0 {
+            selectedIndicesLabel.text = String(selectedIndicesLabel.text!.characters.dropLast())
+        }
+        
+        selectedIndicesLabel.text?.append("]")
+        
+    }
 }

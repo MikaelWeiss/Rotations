@@ -19,6 +19,7 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBAction func RepeatsButton(_ sender: UIBarButtonItem) {
         isAddingName = 2
+        performSegue(withIdentifier: "RepeatsToRepeats", sender: UIBarButtonItem())
     }
     @IBAction func addButton(_ sender: UIBarButtonItem) {
         isAddingName = 1
