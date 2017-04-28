@@ -30,75 +30,59 @@ class RotationsUITests: XCTestCase {
     
     func testNormalUse() {
         
+        
         let app = XCUIApplication()
-        let addButton = app.navigationBars["Groups"].buttons["Add"]
-        addButton.tap()
+        app.navigationBars["Groups"].buttons["Add"].tap()
         
-        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element
+        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element(boundBy: 1).children(matching: .other).element(boundBy: 1).children(matching: .other).element
         let textField = element.children(matching: .textField).element
-        textField.tap()
-        
-        let doneButton = app.buttons["Done"]
-        doneButton.tap()
-        addButton.tap()
         textField.tap()
         textField.typeText("asdf")
         
         let saveButton = app.buttons["Save"]
         saveButton.tap()
+        
+        let doneButton = app.buttons["Done"]
         doneButton.tap()
+//        element.children(matching: .other).element.children(matching: .textField).element.tap()
         
+        let tablesQuery = app.tables
+        tablesQuery.staticTexts["asdf"].tap()
+        app.navigationBars["Rotations"].buttons["Edit"].tap()
         
-        let asdfStaticText = app.tables.cells.staticTexts["asdf"]
-        asdfStaticText.tap()
-        
-        let rotationsNavigationBar = app.navigationBars["Rotations"]
-        rotationsNavigationBar.buttons["Add"].tap()
+        let editNavigationBar = app.navigationBars["Edit"]
+        editNavigationBar.buttons["Add"].tap()
         textField.tap()
-        textField.typeText("say whats up")
+        textField.typeText("qwerty")
         saveButton.tap()
-        
         app.pickerWheels["Assignment"].swipeUp()
+        
         textField.tap()
         textField.typeText("mikael")
         saveButton.tap()
         doneButton.tap()
-        rotationsNavigationBar.buttons["Edit"].tap()
-        
-        let tablesQuery = app.tables
-        let mikaelStaticText = tablesQuery.staticTexts["mikael"]
-        mikaelStaticText.swipeLeft()
-        
-        let deleteButton = tablesQuery.buttons["Delete"]
-        deleteButton.tap()
-        
-        let tablesQuery2 = app.tables
-        let SayWhatsUpStaticText = tablesQuery2.staticTexts["so up"]
-        SayWhatsUpStaticText.swipeLeft()
-        
-        let deleteButton2 = tablesQuery2.buttons["Delete"]
+        editNavigationBar.buttons["Repeats"].tap()
+        tablesQuery.buttons["MO"].tap()
+        tablesQuery.buttons["SU"].tap()
+        tablesQuery.buttons["TU"].tap()
+        tablesQuery.buttons["WE"].tap()
+        tablesQuery.buttons["TH"].tap()
+        tablesQuery.buttons["FR"].tap()
+        tablesQuery.buttons["SA"].tap()
+        app.navigationBars["Repeats"].buttons["Cancel"].tap()
+        tablesQuery.staticTexts["mikael"].swipeLeft()
+        let deleteButton2 = tablesQuery.buttons["Delete"]
         deleteButton2.tap()
+
+        let tablesQuery2 = app.tables
+        tablesQuery2.staticTexts["qwerty"].swipeLeft()
         
-        XCUIApplication().navigationBars["Edit"].buttons["Repeats"].tap()
-        
-        let tablesQuery3 = app.tables
-        tablesQuery3.buttons["MO"].tap()
-        tablesQuery3.buttons["TU"].tap()
-        tablesQuery3.buttons["WE"].tap()
-        tablesQuery3.buttons["TH"].tap()
-        tablesQuery3.buttons["FR"].tap()
-        tablesQuery3.buttons["SA"].tap()
-        tablesQuery3.buttons["SU"].tap()
-        
-        let repeatsNavigationBar = app.navigationBars["Repeats"]
-//        repeatsNavigationBar.buttons["Save"].tap()
-        repeatsNavigationBar.buttons["Cancel"].tap()
-        
-        app.navigationBars["Edit"].buttons["Rotations"].tap()
-        rotationsNavigationBar.buttons["Groups"].tap()
-        asdfStaticText.swipeLeft()
+        let deleteButton = tablesQuery2.buttons["Delete"]
         deleteButton.tap()
-        
+        app.navigationBars["Edit"].buttons["Rotations"].tap()
+        app.navigationBars["Rotations"].buttons["Groups"].tap()
+        tablesQuery2.staticTexts["asdf"].swipeLeft()
+        deleteButton.tap()
         
         
     }

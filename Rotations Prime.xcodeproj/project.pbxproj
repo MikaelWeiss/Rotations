@@ -95,6 +95,13 @@
 			name = Extras;
 			sourceTree = "<group>";
 		};
+		D40D11641EB36ED7005912C3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		D4FBC4F51E0F62E300D5A088 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +123,7 @@
 		D4FBC5001E0F62E600D5A088 /* Rotations Prime */ = {
 			isa = PBXGroup;
 			children = (
+				D40D11641EB36ED7005912C3 /* View */,
 				D40C9A831E6DA10A0043EB2A /* Controlor */,
 				D4FBC5051E0F62E600D5A088 /* Main.storyboard */,
 				D4FBC50A1E0F62E600D5A088 /* LaunchScreen.storyboard */,
@@ -435,6 +443,7 @@
 				D400D3111EB13680000A723D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D4FBC4F91E0F62E300D5A088 /* Build configuration list for PBXProject "Rotations Prime" */ = {
 			isa = XCConfigurationList;

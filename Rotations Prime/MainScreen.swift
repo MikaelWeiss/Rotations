@@ -27,10 +27,6 @@ class mainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         isAddingName = 3
         performSegue(withIdentifier: "whatsUp", sender: UIBarButtonItem())
     }
-    @IBAction func addPersonPressed(_ sender: UIBarButtonItem) {
-        isAddingName = 1
-        performSegue(withIdentifier: "AddPerson", sender: UIBarButtonItem())
-    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -66,13 +62,8 @@ class mainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableview.reloadData()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if isAddingName == 1 {
-            
-            let addPerson = segue.destination as! addPersonView
-            addPerson.isInMain = true
-            addPerson.whatGroup = whatGroup
-            
-        }else if isAddingName == 3 {
+ 
+        if isAddingName == 3 {
             let TheEditScreen = segue.destination as! EditScreen
             TheEditScreen.whatGroup = whatGroup
         }

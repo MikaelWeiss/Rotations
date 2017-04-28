@@ -20,6 +20,11 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBAction func RepeatsButton(_ sender: UIBarButtonItem) {
         isAddingName = 2
     }
+    @IBAction func addButton(_ sender: UIBarButtonItem) {
+        isAddingName = 1
+        performSegue(withIdentifier: "AddPerson1", sender: UIBarButtonItem())
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -46,6 +51,16 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.navigationItem.leftItemsSupplementBackButton = true
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if isAddingName == 1 {
+            
+            let addPerson = segue.destination as! addPersonView
+            addPerson.isInMain = true
+            addPerson.whatGroup = whatGroup
+            
+        }
+    }
+    
 // MARK: - Table View Setup
     
     @IBOutlet weak var myTableView: UITableView!
@@ -125,8 +140,16 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
 // MARK: - custome functions
     
 // MARK: - Exit segue
-    @IBAction func GoToEdit(Segue: UIStoryboardSegue) {
+    @IBAction func GoToEdit(segue: UIStoryboardSegue) {
+        if UserDefaults.standard.object(forKey: "Name" + whatGroup) != nil {
+            PeopleForGroup = UserDefaults.standard.array(forKey: "Name" + whatGroup) as! [String]
+        }
+        if UserDefaults.standard.object(forKey: whatGroup + "Assignment") != nil {
+            theAssignments = UserDefaults.standard.array(forKey: whatGroup + "Assignment") as! [String]
+        }
         myTableView.reloadData()
+        isAddingName = 2
+        print("Exited to Edit")
     }
 
 }

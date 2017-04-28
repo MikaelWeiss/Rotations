@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5zy-BV-osm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5zy-BV-osm">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -67,9 +67,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <segmentedControl opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="of1-JV-4LU">
+                                                <segmentedControl opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="of1-JV-4LU">
                                                     <rect key="frame" x="8" y="8" width="304" height="29"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <segments>
                                                         <segment title="SU"/>
                                                         <segment title="MO"/>
@@ -81,6 +80,11 @@
                                                     </segments>
                                                 </segmentedControl>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="of1-JV-4LU" firstAttribute="top" secondItem="1ON-Jb-yg9" secondAttribute="topMargin" id="2pz-NZ-an9"/>
+                                                <constraint firstItem="of1-JV-4LU" firstAttribute="trailing" secondItem="1ON-Jb-yg9" secondAttribute="trailingMargin" id="G1X-4F-OiU"/>
+                                                <constraint firstItem="of1-JV-4LU" firstAttribute="leading" secondItem="1ON-Jb-yg9" secondAttribute="leadingMargin" id="ped-ra-X7r"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -168,23 +172,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Rotations" id="85n-zE-lMd">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="P0c-ce-E7N">
-                                <connections>
-                                    <action selector="addPersonPressed:" destination="BYZ-38-t0r" id="Ewb-Hl-FYG"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Edit" id="HCL-Wa-vKS" userLabel="Edit">
-                                <connections>
-                                    <action selector="Edit:" destination="BYZ-38-t0r" id="KKv-Vh-toK"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="HCL-Wa-vKS" userLabel="Edit">
+                            <connections>
+                                <action selector="Edit:" destination="BYZ-38-t0r" id="KKv-Vh-toK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableview" destination="gGl-fH-7lX" id="wc4-rk-DHp"/>
                         <segue destination="eUd-My-XnP" kind="unwind" identifier="BackButtonPressed" unwindAction="goToGroupScreenSegueWithSegue:" id="pwd-bd-kdP"/>
-                        <segue destination="eIz-gm-FLx" kind="presentation" identifier="AddPerson" modalPresentationStyle="formSheet" id="3UQ-YV-1eL"/>
                         <segue destination="3Sf-Pf-ARl" kind="show" identifier="whatsUp" id="CLM-0D-VC6"/>
                     </connections>
                 </viewController>
@@ -267,8 +263,8 @@
                         <outlet property="AsignmentPicker" destination="Tt7-Dt-rY4" id="7PZ-Xc-wZA"/>
                         <outlet property="EnteredObjectTextFeild" destination="EiT-QV-siE" id="z1l-vu-G2S"/>
                         <outlet property="NamePicker" destination="ZA0-Sg-XL0" id="EWO-qd-nQc"/>
-                        <segue destination="kLS-X1-uCQ" kind="unwind" identifier="FromAddToMain" unwindAction="exitSegueWithSegue:" id="iNa-Zh-qXy"/>
                         <segue destination="kLS-X1-uCQ" kind="unwind" identifier="FromAddToGroup" unwindAction="goToGroupScreenSegueWithSegue:" id="e1V-Bt-Fig"/>
+                        <segue destination="kLS-X1-uCQ" kind="unwind" identifier="AddToEdit" unwindAction="GoToEditWithSegue:" id="D8J-8F-b7c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q45-34-61M" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -392,17 +388,25 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit" id="nSn-MS-SYx">
-                        <barButtonItem key="rightBarButtonItem" title="Repeats" id="Qcg-zx-vWv">
-                            <connections>
-                                <action selector="RepeatsButton:" destination="3Sf-Pf-ARl" id="gV3-U1-4hZ"/>
-                                <segue destination="46V-eR-3ad" kind="popoverPresentation" identifier="editTimesSegue" popoverAnchorBarButtonItem="Qcg-zx-vWv" id="KYF-l3-zLQ">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="LSC-Im-YQE">
+                                <connections>
+                                    <action selector="addButton:" destination="3Sf-Pf-ARl" id="3FK-pK-uIK"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Repeats" id="Qcg-zx-vWv">
+                                <connections>
+                                    <action selector="RepeatsButton:" destination="3Sf-Pf-ARl" id="gV3-U1-4hZ"/>
+                                    <segue destination="46V-eR-3ad" kind="popoverPresentation" identifier="editTimesSegue" popoverAnchorBarButtonItem="Qcg-zx-vWv" id="KYF-l3-zLQ">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="myTableView" destination="hUJ-kc-QzF" id="qRo-II-jnk"/>
+                        <segue destination="eIz-gm-FLx" kind="presentation" identifier="AddPerson1" modalPresentationStyle="formSheet" modalTransitionStyle="crossDissolve" id="2VL-zy-C3i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVw-hl-at8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -447,6 +451,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3UQ-YV-1eL"/>
+        <segue reference="2VL-zy-C3i"/>
     </inferredMetricsTieBreakers>
 </document>

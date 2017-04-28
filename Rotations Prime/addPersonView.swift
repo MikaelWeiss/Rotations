@@ -36,7 +36,7 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     @IBAction func donePressed(_ sender: UIButton) {
         if isInMain == true {
             
-            performSegue(withIdentifier: "FromAddToMain", sender: UIButton())
+            performSegue(withIdentifier: "AddToEdit", sender: UIButton())
             
         }else {
             
