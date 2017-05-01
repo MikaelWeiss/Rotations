@@ -44,7 +44,6 @@ class RotationsUITests: XCTestCase {
         
         let doneButton = app.buttons["Done"]
         doneButton.tap()
-//        element.children(matching: .other).element.children(matching: .textField).element.tap()
         
         let tablesQuery = app.tables
         tablesQuery.staticTexts["asdf"].tap()

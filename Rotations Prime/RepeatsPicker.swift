@@ -14,8 +14,11 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "EditTimesToEdit", sender: UIBarButtonItem())
     }
+    @IBAction func RepeatWeeklyPressed(_ sender: UIButton) {
+    
+    }
     var myArray = ["Hourly", "Daily"]
-    var myArray2 = [String]()
+    var myArray2 = ["1h","2h","3h","4h","5h","6h","7h","8h","9h","10h","11h","12h"]
     var isPickerOpen = false
 // MARK: - system stuff
     override func viewDidLoad() {
@@ -23,10 +26,8 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
         // Do any additional setup after loading the view.
         firstPickerView.dataSource = self
         firstPickerView.delegate = self
-        repeatSegmentedController.isMultipleTouchEnabled = true
+        
     }
-    @IBOutlet weak var repeatSegmentedController: UISegmentedControl!
-    
 // MARK: - table view setup
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath.section == 0 && indexPath.row == 1) {
@@ -79,10 +80,20 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
         switch pickerView.tag {
         case 1:
             print("Sup")
+            switchTheDailyOrHour()
         default:
-            myArray2 = [""]
+            print("whats up")
         }
     }
 // MARK: - custome functions
-    
+    var isDaily = true
+    func switchTheDailyOrHour() {
+        if isDaily == true {
+            detailLable.text = "Daily"
+        }else if isDaily == false {
+            detailLable.text = "Hourly"
+        }
+        isDaily = !isDaily
+        
+    }
 }
