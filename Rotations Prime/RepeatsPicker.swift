@@ -15,11 +15,10 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
         performSegue(withIdentifier: "EditTimesToEdit", sender: UIBarButtonItem())
     }
     @IBAction func RepeatWeeklyPressed(_ sender: UIButton) {
-        var senderBool = true
-        if senderBool == true {
-            sender.backgroundColor = UIColor.blue
-            // set the text color
-            senderBool = !senderBool
+        if sender.backgroundColor == UIColor.blue {
+            switchColor(isWhite: false, sender: sender)
+        }else {
+            switchColor(isWhite: true, sender: sender)
         }
     print("Pressed a repeat button")
     }
@@ -32,7 +31,7 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
         // Do any additional setup after loading the view.
         firstPickerView.dataSource = self
         firstPickerView.delegate = self
-         
+        
     }
 // MARK: - table view setup
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -86,20 +85,35 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
         switch pickerView.tag {
         case 1:
             print("Sup")
-            switchTheDailyOrHour()
+            if row == 1 {
+                switchTheDailyOrHour(isDaily: false)
+                print("sup1")
+            }else {
+                switchTheDailyOrHour(isDaily: true)
+                print("sup2")
+            }
         default:
             print("whats up")
         }
     }
 // MARK: - custome functions
-    var isDaily = true
-    func switchTheDailyOrHour() {
-        if isDaily == true {
+    func switchTheDailyOrHour(isDaily: Bool) {
+        if isDaily == false {
             detailLable.text = "Daily"
-        }else if isDaily == false {
+            print("Daily")
+        }else if isDaily == true {
             detailLable.text = "Hourly"
+            print("Hourly")
         }
-        isDaily = !isDaily
         
+    }
+    func switchColor(isWhite: Bool, sender: UIButton) {
+        if isWhite == true {
+            sender.backgroundColor = UIColor.blue
+            sender.titleLabel?.textColor = UIColor.white
+        }else if isWhite == false {
+            sender.backgroundColor = UIColor.white
+            sender.titleLabel?.textColor = UIColor.blue
+        }
     }
 }
