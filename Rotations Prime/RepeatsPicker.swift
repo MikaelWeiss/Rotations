@@ -15,7 +15,13 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
         performSegue(withIdentifier: "EditTimesToEdit", sender: UIBarButtonItem())
     }
     @IBAction func RepeatWeeklyPressed(_ sender: UIButton) {
-    
+        var senderBool = true
+        if senderBool == true {
+            sender.backgroundColor = UIColor.blue
+            // set the text color
+            senderBool = !senderBool
+        }
+    print("Pressed a repeat button")
     }
     var myArray = ["Hourly", "Daily"]
     var myArray2 = ["1h","2h","3h","4h","5h","6h","7h","8h","9h","10h","11h","12h"]
