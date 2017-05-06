@@ -29,6 +29,7 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        myTableView.isEditing = true
         
         myTableView.allowsSelection = false
         
@@ -108,6 +109,32 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
+    }
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        switch sourceIndexPath.section {
+        case 0:
+            let item = PeopleForGroup[sourceIndexPath.row]
+            PeopleForGroup.remove(at: sourceIndexPath.row)
+            PeopleForGroup.insert(item, at: destinationIndexPath.row)
+            UserDefaults.standard.set(theAssignments, forKey: whatGroup + "Assignment")
+            UserDefaults.standard.set(PeopleForGroup, forKey: "Name" + whatGroup)
+            print("Moved People")
+        default:
+            let item = theAssignments[sourceIndexPath.row]
+            theAssignments.remove(at: sourceIndexPath.row)
+            theAssignments.insert(item, at: destinationIndexPath.row)
+            UserDefaults.standard.set(theAssignments, forKey: whatGroup + "Assignment")
+            UserDefaults.standard.set(PeopleForGroup, forKey: "Name" + whatGroup)
+            print("Moved Assignments")
+        }
+    }
+    func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+        if sourceIndexPath.section == proposedDestinationIndexPath.section {
+            <#code#>
+        }
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
