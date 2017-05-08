@@ -9,21 +9,22 @@
 import UIKit
 
 class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+//    var arrayOfDays: [String: Bool] = ["FR": false,"FR": false,"FR": false,"FR": false,"FR": false,"FR": false,"FR": false,]
     @IBOutlet weak var firstPickerView: UIPickerView!
     @IBOutlet weak var detailLable: UILabel!
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "EditTimesToEdit", sender: UIBarButtonItem())
     }
     @IBAction func RepeatWeeklyPressed(_ sender: UIButton) {
-        if sender.backgroundColor == UIColor.blue {
+        if sender.backgroundColor == UIColor(red:0.30, green:0.85, blue:0.39, alpha:1.0) {
             switchColor(isWhite: false, sender: sender)
         }else {
             switchColor(isWhite: true, sender: sender)
         }
     print("Pressed a repeat button")
     }
-    var myArray = ["Hourly", "Daily"]
-    var myArray2 = ["1h","2h","3h","4h","5h","6h","7h","8h","9h","10h","11h","12h"]
+    var myArray = ["Hourly", "Daily", "Weekly"]
+    var myArray2 = ["1AM","2AM","3AM","4AM","5AM","6AM","7AM","8AM","9AM","10AM","11AM","12AM","1PM","2PM","3PM","4PM","5PM","6PM","7PM","8PM","9PM","10PM","11PM","12PM"]
     var isPickerOpen = false
 // MARK: - system stuff
     override func viewDidLoad() {
@@ -109,11 +110,11 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     func switchColor(isWhite: Bool, sender: UIButton) {
         if isWhite == true {
-            sender.backgroundColor = UIColor.blue
-            sender.titleLabel?.textColor = UIColor.white
+            sender.backgroundColor = UIColor(red:0.30, green:0.85, blue:0.39, alpha:1.0)
+            sender.titleLabel?.textColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
         }else if isWhite == false {
-            sender.backgroundColor = UIColor.white
-            sender.titleLabel?.textColor = UIColor.blue
+            sender.backgroundColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
+            sender.titleLabel?.textColor = UIColor(red:0.30, green:0.85, blue:0.39, alpha:1.0)
         }
     }
 }
