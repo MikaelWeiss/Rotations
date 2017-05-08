@@ -133,7 +133,9 @@ class EditScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
         if sourceIndexPath.section == proposedDestinationIndexPath.section {
-            <#code#>
+            return proposedDestinationIndexPath
+        }else {
+            return sourceIndexPath
         }
     }
     
