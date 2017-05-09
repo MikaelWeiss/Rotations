@@ -30,7 +30,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Frequency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lgY-B5-MPj">
-                                                    <rect key="frame" x="15" y="12" width="81" height="20.5"/>
+                                                    <rect key="frame" x="16" y="12" width="81" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -323,7 +323,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pz7-uV-HPE" userLabel="Back">
-                                <rect key="frame" x="16" y="0.0" width="50" height="50"/>
+                                <rect key="frame" x="16" y="20" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="egY-79-wqY"/>
                                     <constraint firstAttribute="width" constant="50" id="wSM-35-mOW"/>
@@ -336,7 +336,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6w-ya-dMQ">
-                                <rect key="frame" x="254" y="0.0" width="50" height="50"/>
+                                <rect key="frame" x="254" y="20" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="XFU-9x-R7o"/>
                                     <constraint firstAttribute="width" constant="50" id="z8W-LN-UMV"/>
@@ -349,25 +349,25 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EiT-QV-siE">
-                                <rect key="frame" x="16" y="58" width="288" height="30"/>
+                                <rect key="frame" x="16" y="78" width="288" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tt7-Dt-rY4">
-                                <rect key="frame" x="0.0" y="96" width="320" height="145"/>
+                                <rect key="frame" x="0.0" y="116" width="320" height="145"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="145" id="rv3-xv-g3y"/>
                                 </constraints>
                             </pickerView>
                             <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZA0-Sg-XL0">
-                                <rect key="frame" x="0.0" y="249" width="320" height="145"/>
+                                <rect key="frame" x="0.0" y="269" width="320" height="145"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="145" id="79V-KA-GMu"/>
                                 </constraints>
                             </pickerView>
                         </subviews>
-                        <color key="backgroundColor" red="0.359142383805374" green="0.64313725490196072" blue="0.9137254901960784" alpha="0.079383148006134968" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="g6w-ya-dMQ" firstAttribute="trailing" secondItem="Lia-eW-vif" secondAttribute="trailingMargin" id="5Pc-X4-FKG"/>
                             <constraint firstItem="Tt7-Dt-rY4" firstAttribute="leading" secondItem="Lia-eW-vif" secondAttribute="leading" id="Jfj-z1-FVA"/>
@@ -384,6 +384,7 @@
                             <constraint firstAttribute="trailing" secondItem="ZA0-Sg-XL0" secondAttribute="trailing" id="yI3-YY-ZoS"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="AsignmentPicker" destination="Tt7-Dt-rY4" id="7PZ-Xc-wZA"/>
                         <outlet property="EnteredObjectTextFeild" destination="EiT-QV-siE" id="z1l-vu-G2S"/>
@@ -458,6 +459,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="GroupTableView" destination="1fx-wC-EO1" id="hkf-JA-UCZ"/>
                         <outlet property="addButtonO" destination="l9s-7b-hZU" id="Ewl-05-MdO"/>

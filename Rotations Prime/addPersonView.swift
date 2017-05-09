@@ -9,7 +9,7 @@
 import UIKit
 class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-// MARK: - var setup
+    // MARK: - var setup
     var isInMain = true
     
     var IsAddingAssignment = true
@@ -24,15 +24,15 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     
     var allGroups = [""]
     
-// MARK: - Outlet Setup
+    // MARK: - Outlet Setup
     @IBOutlet weak var NamePicker: UIPickerView!
     
     @IBOutlet weak var AsignmentPicker: UIPickerView!
     
     @IBOutlet weak var EnteredObjectTextFeild: UITextField!
     
-// MARK: - Action Setup
-
+    // MARK: - Action Setup
+    
     @IBAction func donePressed(_ sender: UIButton) {
         if isInMain == true {
             
@@ -41,113 +41,115 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         }else {
             
             performSegue(withIdentifier: "FromAddToGroup", sender: UIButton())
-//            self.dismiss(animated: true, completion: nil)
+            //            self.dismiss(animated: true, completion: nil)
             
         }
     }
     
-// MARK: - Add/Save
+    // MARK: - Add/Save
     
     @IBAction func saveButton(_ sender: UIButton) {
-        if isInMain == true {
-            
-            if IsAddingAssignment == true {
-// MARK: Add Assignment
-                let AssignmentObject = UserDefaults.standard.object(forKey: whatGroup + "Assignment")  as? [String]
+        if EnteredObjectTextFeild.text != "" {
+            if isInMain == true {
                 
-                var Assignment: [String]
-                
-                if let tempItems = AssignmentObject {
+                if IsAddingAssignment == true {
+                    // MARK: Add Assignment
+                    let AssignmentObject = UserDefaults.standard.object(forKey: whatGroup + "Assignment")  as? [String]
                     
-                    Assignment = tempItems
+                    var Assignment: [String]
                     
-                    Assignment.append("\(EnteredObjectTextFeild.text!)")
-                    
-                    print(Assignment)
-                    
-                } else {
-                    
-                    Assignment = [EnteredObjectTextFeild.text!]
-                    print("user defaults error 2")
-                }
-                
-                UserDefaults.standard.set(Assignment, forKey: whatGroup + "Assignment")
-                
-                EnteredObjectTextFeild.text = ""
-            }else {
-// MARK: Add Name
-                if AllNames.contains("\(EnteredObjectTextFeild.text!)"){
-                    if namesForEachGroup.contains(EnteredObjectTextFeild.text!) {
-                        EnteredObjectTextFeild.text = ""
-                        AlertAction(Title: "Name Exists", Message: "This name already exists in this group", alerTitle: "OK")
-                    }else {
-                        addNameToGroup()
-                        EnteredObjectTextFeild.text = ""
-                    }
-                }else {
-                    let NameObject = UserDefaults.standard.object(forKey: "Name")  as? [String]
-                    
-                    var Name: [String]
-                    
-                    if let tempItems = NameObject {
+                    if let tempItems = AssignmentObject {
                         
-                        Name = tempItems
+                        Assignment = tempItems
                         
-                        Name.append("\(EnteredObjectTextFeild.text!)")
+                        Assignment.append("\(EnteredObjectTextFeild.text!)")
                         
-                        print(Name)
+                        print(Assignment)
                         
                     } else {
                         
-                        Name = [EnteredObjectTextFeild.text!]
-                        print("user defaults error 3")
+                        Assignment = [EnteredObjectTextFeild.text!]
+                        print("user defaults error 2")
                     }
                     
-                    UserDefaults.standard.set(Name, forKey: "Name")
-                    addNameToGroup()
+                    UserDefaults.standard.set(Assignment, forKey: whatGroup + "Assignment")
+                    
                     EnteredObjectTextFeild.text = ""
-                    NamePicker.reloadAllComponents()
-                    AsignmentPicker.reloadAllComponents()
+                }else {
+                    // MARK: Add Name
+                    if AllNames.contains("\(EnteredObjectTextFeild.text!)"){
+                        if namesForEachGroup.contains(EnteredObjectTextFeild.text!) {
+                            EnteredObjectTextFeild.text = ""
+                            AlertAction(Title: "Name Exists", Message: "This name already exists in this group", alerTitle: "OK")
+                        }else {
+                            addNameToGroup()
+                            EnteredObjectTextFeild.text = ""
+                        }
+                    }else {
+                        let NameObject = UserDefaults.standard.object(forKey: "Name")  as? [String]
+                        
+                        var Name: [String]
+                        
+                        if let tempItems = NameObject {
+                            
+                            Name = tempItems
+                            
+                            Name.append("\(EnteredObjectTextFeild.text!)")
+                            
+                            print(Name)
+                            
+                        } else {
+                            
+                            Name = [EnteredObjectTextFeild.text!]
+                            print("user defaults error 3")
+                        }
+                        
+                        UserDefaults.standard.set(Name, forKey: "Name")
+                        addNameToGroup()
+                        EnteredObjectTextFeild.text = ""
+                        NamePicker.reloadAllComponents()
+                        AsignmentPicker.reloadAllComponents()
+                    }
+                    
                 }
-                
-            }
             }else if isInMain == false {
-// MARK: Add Group
-            if allGroups.contains("\(EnteredObjectTextFeild.text!)"){
+                // MARK: Add Group
+                if allGroups.contains("\(EnteredObjectTextFeild.text!)"){
                     EnteredObjectTextFeild.text = ""
                     AlertAction(Title: "Group Exists", Message: "This Group already exists", alerTitle: "OK")
-            }else {
-                let groupsObject = UserDefaults.standard.object(forKey: "Groups")  as? [String]
-                
-                var groups: [String]
-                
-                if let tempItems = groupsObject {
+                }else {
+                    let groupsObject = UserDefaults.standard.object(forKey: "Groups")  as? [String]
                     
-                    groups = tempItems
+                    var groups: [String]
                     
-                    groups.append(EnteredObjectTextFeild.text!)
+                    if let tempItems = groupsObject {
+                        
+                        groups = tempItems
+                        
+                        groups.append(EnteredObjectTextFeild.text!)
+                        
+                        print(groups)
+                        
+                    } else {
+                        
+                        groups = [EnteredObjectTextFeild.text!]
+                        print("Bad")
+                    }
                     
-                    print(groups)
+                    UserDefaults.standard.set(groups, forKey: "Groups")
                     
-                } else {
+                    EnteredObjectTextFeild.text = ""
                     
-                    groups = [EnteredObjectTextFeild.text!]
-                    print("Bad")
+                    
                 }
-                
-                UserDefaults.standard.set(groups, forKey: "Groups")
-                
-                EnteredObjectTextFeild.text = ""
-                
-                
+                NamePicker.reloadAllComponents()
+                AsignmentPicker.reloadAllComponents()
             }
             NamePicker.reloadAllComponents()
             AsignmentPicker.reloadAllComponents()
         }
-        NamePicker.reloadAllComponents()
-        AsignmentPicker.reloadAllComponents()
-        }
-// MARK: Add Name func
+    }
+    // MARK: Add Name func
     func addNameToGroup(){
         let nameObject = UserDefaults.standard.object(forKey: "Name" + whatGroup)  as? [String]
         
@@ -174,102 +176,103 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         NamePicker.reloadAllComponents()
         AsignmentPicker.reloadAllComponents()
     }
-// MARK: - PickerView setup
-        func numberOfComponents(in pickerView: UIPickerView) -> Int {
-            return 1
+    // MARK: - PickerView setup
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        switch pickerView.tag {
+        case 1:
+            return groupOrPerson.count
+        default:
+            //                findUnusedNames()
+            return AllNames.count
         }
-        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-            switch pickerView.tag {
-            case 1:
-                return groupOrPerson.count
-            default:
-//                findUnusedNames()
-                return AllNames.count
-            }
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch pickerView.tag {
+        case 1:
+            return groupOrPerson[row]
+        default:
+            //                findUnusedNames()
+            return AllNames[row]
         }
-        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-            switch pickerView.tag {
-            case 1:
-                return groupOrPerson[row]
-            default:
-//                findUnusedNames()
-                return AllNames[row]
-            }
-            
-        }
-// MARK: didSelectRow
-        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-            
-            if pickerView.tag == 1 {
-                if row == 1 {
-                    NamePicker.isHidden = false
-                    IsAddingAssignment = false
-                }else {
-                    NamePicker.isHidden = true
-                    IsAddingAssignment = true
-                }
-            }
-            
-            if pickerView.tag == 2 {
-                
-                EnteredObjectTextFeild.text = AllNames[row]
-                
-            }
-        }
-// MARK: - system stuff
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            // Do any additional setup after loading the view.
-            let NamesObject = UserDefaults.standard.object(forKey: "Name" + whatGroup)  as? [String]
-            
-            if let tempItems = NamesObject {
-                
-                namesForEachGroup = tempItems
-                
-                print("saved data in add (Name)")
-            }
-            let groupsObject = UserDefaults.standard.object(forKey: "Groups")
-            
-            if let tempItems = groupsObject as? [String] {
-                allGroups = tempItems
-                print(allGroups)
-            } else {
-                print("user defaults error 1")
-            }
-            AsignmentPicker.dataSource = self
-            AsignmentPicker.delegate = self
-            NamePicker.dataSource = self
-            NamePicker.delegate = self
-            NamePicker.isHidden = true
-            NamePicker.tag = 2
-            AsignmentPicker.tag = 1
-            
-            if isInMain == true {
-                
-                AsignmentPicker.isHidden = false
-                
-            }else if isInMain == false {
-                
-                AsignmentPicker.isHidden = true
+        
+    }
+    // MARK: didSelectRow
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if pickerView.tag == 1 {
+            if row == 1 {
+                NamePicker.isHidden = false
+                IsAddingAssignment = false
+            }else {
                 NamePicker.isHidden = true
+                IsAddingAssignment = true
             }
-            let NameObject = UserDefaults.standard.object(forKey: "Name") as? [String]
-            if let tempItems = NameObject {
-                AllNames = tempItems
-                print(AllNames)
-                
-            } else {
-                print("user defaults error 5")
-            }
-            IsAddingAssignment = true
         }
+        
+        if pickerView.tag == 2 {
+            
+            EnteredObjectTextFeild.text = AllNames[row]
+            
+        }
+    }
+    // MARK: - system stuff
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        let NamesObject = UserDefaults.standard.object(forKey: "Name" + whatGroup)  as? [String]
+        
+        if let tempItems = NamesObject {
+            
+            namesForEachGroup = tempItems
+            
+            print("saved data in add (Name)")
+        }
+        let groupsObject = UserDefaults.standard.object(forKey: "Groups")
+        
+        if let tempItems = groupsObject as? [String] {
+            allGroups = tempItems
+            print(allGroups)
+        } else {
+            print("user defaults error 1")
+        }
+        EnteredObjectTextFeild.textColor = UIColor(red:0.67, green:0.89, blue:0.44, alpha:1.0)
+        AsignmentPicker.dataSource = self
+        AsignmentPicker.delegate = self
+        NamePicker.dataSource = self
+        NamePicker.delegate = self
+        NamePicker.isHidden = true
+        NamePicker.tag = 2
+        AsignmentPicker.tag = 1
+        
+        if isInMain == true {
+            
+            AsignmentPicker.isHidden = false
+            
+        }else if isInMain == false {
+            
+            AsignmentPicker.isHidden = true
+            NamePicker.isHidden = true
+        }
+        let NameObject = UserDefaults.standard.object(forKey: "Name") as? [String]
+        if let tempItems = NameObject {
+            AllNames = tempItems
+            print(AllNames)
+            
+        } else {
+            print("user defaults error 5")
+        }
+        IsAddingAssignment = true
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if isInMain == true {
             
         }
         
     }
-// MARK: - costome stuff
+    // MARK: - costome stuff
     func AlertAction(Title: String, Message: String, alerTitle: String) {
         // create the alert
         let alert = UIAlertController(title: Title, message: Message, preferredStyle: UIAlertControllerStyle.alert)

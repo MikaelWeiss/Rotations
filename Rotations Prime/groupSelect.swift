@@ -77,6 +77,7 @@ class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate 
         }
         
         GroupTableView.reloadData()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
