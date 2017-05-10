@@ -23,8 +23,8 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
         }
     print("Pressed a repeat button")
     }
-    var myArray = ["Hourly", "Daily", "Weekly"]
-    var myArray2 = ["1AM","2AM","3AM","4AM","5AM","6AM","7AM","8AM","9AM","10AM","11AM","12AM","1PM","2PM","3PM","4PM","5PM","6PM","7PM","8PM","9PM","10PM","11PM","12PM"]
+    var myArray = ["Hourly", "Daily", "Weekly", "Monthly"]
+    var TimesArray = ["1AM","2AM","3AM","4AM","5AM","6AM","7AM","8AM","9AM","10AM","11AM","12AM","1PM","2PM","3PM","4PM","5PM","6PM","7PM","8PM","9PM","10PM","11PM","12PM"]
     var isPickerOpen = false
 // MARK: - system stuff
     override func viewDidLoad() {
@@ -66,8 +66,6 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
         switch pickerView.tag {
         case 1:
             return myArray.count
-        case 2:
-            return myArray2.count
         default:
             return myArray.count
         }
@@ -76,8 +74,6 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
         switch pickerView.tag {
         case 1:
             return myArray[row]
-        case 2:
-            return myArray2[row]
         default:
             return myArray[row]
         }
@@ -86,26 +82,14 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
         switch pickerView.tag {
         case 1:
             print("Sup")
-            if row == 1 {
-                switchTheDailyOrHour(isDaily: false)
-                print("sup1")
-            }else {
-                switchTheDailyOrHour(isDaily: true)
-                print("sup2")
-            }
+            switchTheDailyOrHour(what: myArray[row])
         default:
             print("whats up")
         }
     }
 // MARK: - custome functions
-    func switchTheDailyOrHour(isDaily: Bool) {
-        if isDaily == false {
-            detailLable.text = "Daily"
-            print("Daily")
-        }else if isDaily == true {
-            detailLable.text = "Hourly"
-            print("Hourly")
-        }
+    func switchTheDailyOrHour(what: String) {
+        detailLable.text = what
         
     }
     func switchColor(isWhite: Bool, sender: UIButton) {
