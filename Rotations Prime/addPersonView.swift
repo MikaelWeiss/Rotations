@@ -33,7 +33,7 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     
     // MARK: - Action Setup
     
-    @IBAction func donePressed(_ sender: UIButton) {
+    @IBAction func donePressed(_ sender: UIBarButtonItem) {
         if isInMain == true {
             
             performSegue(withIdentifier: "AddToEdit", sender: UIButton())
@@ -48,7 +48,7 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     
     // MARK: - Add/Save
     
-    @IBAction func saveButton(_ sender: UIButton) {
+    @IBAction func saveButton(_ sender: UIBarButtonItem) {
         if EnteredObjectTextFeild.text != "" {
             if isInMain == true {
                 
@@ -238,7 +238,7 @@ class addPersonView: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         } else {
             print("user defaults error 1")
         }
-        EnteredObjectTextFeild.textColor = UIColor(red:0.67, green:0.89, blue:0.44, alpha:1.0)
+//        EnteredObjectTextFeild.textColor = UIColor(red:0.67, green:0.89, blue:0.44, alpha:1.0)
         AsignmentPicker.dataSource = self
         AsignmentPicker.delegate = self
         NamePicker.dataSource = self

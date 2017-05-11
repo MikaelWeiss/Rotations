@@ -30,7 +30,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Frequency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lgY-B5-MPj">
-                                                    <rect key="frame" x="15" y="12" width="81" height="20.5"/>
+                                                    <rect key="frame" x="16" y="12" width="81" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <accessibility key="accessibilityConfiguration" label="Frequency"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -755,19 +755,27 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Repeats" id="UHY-0C-xiV">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="f6O-Qr-5KM">
-                            <color key="tintColor" red="0.094934098420000002" green="0.86312454940000005" blue="0.09898183495" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.9404296875" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="cancelButton:" destination="QfK-J6-wjn" id="1Oo-Kt-yS4"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="ys1-zp-IgS">
-                            <color key="tintColor" red="0.094934098420000002" green="0.86312454940000005" blue="0.09898183495" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.9404296875" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="detailLable" destination="TvJ-3j-uPl" id="ZJ4-Fx-VaU"/>
                         <outlet property="firstPickerView" destination="hio-hx-Twt" id="Tuv-ND-Af3"/>
+                        <outletCollection property="Weekdays" destination="gGz-MT-Jpk" collectionClass="NSMutableArray" id="Ufp-7r-jKH"/>
+                        <outletCollection property="Weekdays" destination="wJC-h2-Fqv" collectionClass="NSMutableArray" id="tsj-ze-Wd5"/>
+                        <outletCollection property="Weekdays" destination="OZm-qA-F3B" collectionClass="NSMutableArray" id="zNb-sF-6zw"/>
+                        <outletCollection property="Weekdays" destination="Y3B-Fq-nkZ" collectionClass="NSMutableArray" id="OdK-fq-bry"/>
+                        <outletCollection property="Weekdays" destination="5RH-Vt-GLy" collectionClass="NSMutableArray" id="xZT-BV-fos"/>
+                        <outletCollection property="Weekdays" destination="5RH-Vt-GLy" collectionClass="NSMutableArray" id="NyS-ri-XT0"/>
+                        <outletCollection property="Weekdays" destination="I3H-a6-uRU" collectionClass="NSMutableArray" id="CtY-ZN-q7k"/>
+                        <outletCollection property="Weekdays" destination="Knj-Lr-G1z" collectionClass="NSMutableArray" id="W1e-np-ox6"/>
                         <segue destination="bjH-xx-CMg" kind="unwind" identifier="EditTimesToEdit" unwindAction="GoToEditWithSegue:" id="TT5-4u-Sx5"/>
                     </connections>
                 </tableViewController>
@@ -791,6 +799,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="69" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gGl-fH-7lX">
                                 <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexColor" red="0.14509803921568626" green="0.45538336038589478" blue="0.77507305145263672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PeopleTVCell" textLabel="7DP-IK-QFB" detailTextLabel="Vtf-5Q-tT5" rowHeight="62" style="IBUITableViewCellStyleValue1" id="ea6-HK-Tpk" customClass="NameCell" customModule="Rotations_Prime" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="62"/>
@@ -803,14 +812,14 @@
                                                     <rect key="frame" x="15" y="21" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.14509803921568626" green="0.45538336038589478" blue="0.77507305145263672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vtf-5Q-tT5">
                                                     <rect key="frame" x="261" y="21" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.14509803921568626" green="0.45538336038589478" blue="0.77507305145263672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -833,7 +842,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Rotations" id="85n-zE-lMd">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="HCL-Wa-vKS" userLabel="Edit">
-                            <color key="tintColor" red="0.094117647058823528" green="0.86274509803921573" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.9404296875" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="Edit:" destination="BYZ-38-t0r" id="KKv-Vh-toK"/>
                             </connections>
@@ -888,43 +897,19 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <color key="barTintColor" red="0.0" green="0.36470588235294116" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="0.79991227388381958" green="0.80005055665969849" blue="0.7999035120010376" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.9404296875" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Add" id="Aku-Ht-ueC">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="oMu-qp-qWB">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Pz7-uV-HPE" userLabel="Back">
-                                                <rect key="frame" x="16" y="-3" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <accessibility key="accessibilityConfiguration" label="Done"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="egY-79-wqY"/>
-                                                    <constraint firstAttribute="width" constant="50" id="wSM-35-mOW"/>
-                                                </constraints>
-                                                <state key="normal" title="Done">
-                                                    <color key="titleColor" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="donePressed:" destination="eIz-gm-FLx" eventType="touchUpInside" id="awG-YP-d7I"/>
-                                                </connections>
-                                            </button>
+                                        <barButtonItem key="leftBarButtonItem" title="Done" id="JVV-ja-hIJ">
+                                            <connections>
+                                                <action selector="donePressed:" destination="eIz-gm-FLx" id="16z-fD-dUw"/>
+                                            </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="ALf-ts-hrK">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="g6w-ya-dMQ">
-                                                <rect key="frame" x="254" y="-3" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <accessibility key="accessibilityConfiguration" label="Save"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="XFU-9x-R7o"/>
-                                                    <constraint firstAttribute="width" constant="50" id="z8W-LN-UMV"/>
-                                                </constraints>
-                                                <state key="normal" title="Save">
-                                                    <color key="titleColor" red="0.0" green="0.85125768772469135" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="saveButton:" destination="eIz-gm-FLx" eventType="touchUpInside" id="lWQ-gF-Hbk"/>
-                                                </connections>
-                                            </button>
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="TZO-2F-6kR">
+                                            <connections>
+                                                <action selector="saveButton:" destination="eIz-gm-FLx" id="Tbu-RY-ItY"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -996,7 +981,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="270" height="61.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.14509803921568626" green="0.45538336038589478" blue="0.77507305145263672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1020,7 +1005,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Groups" id="hWR-vc-RFz">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="l9s-7b-hZU">
-                            <color key="tintColor" red="0.094117647058823528" green="0.86274509803921573" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.9404296875" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="addingButton:" destination="PNI-d4-kls" id="LZd-iy-AcB"/>
                             </connections>
@@ -1058,6 +1043,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hUJ-kc-QzF">
                                 <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexColor" red="0.14509803921568626" green="0.45538336038589478" blue="0.77507305145263672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="tWi-4N-Xqc" style="IBUITableViewCellStyleDefault" id="zuR-Nh-sdf">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
@@ -1070,7 +1056,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.14509803921568626" green="0.45538336038589478" blue="0.77507305145263672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1095,13 +1081,13 @@
                     <navigationItem key="navigationItem" title="Edit" id="nSn-MS-SYx">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="LSC-Im-YQE">
-                                <color key="tintColor" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.9404296875" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="addButton:" destination="3Sf-Pf-ARl" id="3FK-pK-uIK"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Repeats" id="Qcg-zx-vWv">
-                                <color key="tintColor" red="0.094117647058823528" green="0.86274509803921573" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.9404296875" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="RepeatsButton:" destination="3Sf-Pf-ARl" id="gV3-U1-4hZ"/>
                                 </connections>
@@ -1131,7 +1117,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.36470588235294116" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.79991227388381958" green="0.80005055665969849" blue="0.7999035120010376" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1154,7 +1140,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.36470588235294116" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.79991227388381958" green="0.80005055665969849" blue="0.7999035120010376" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.9404296875" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1168,7 +1154,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="a46-YH-bXz"/>
+        <segue reference="2VL-zy-C3i"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.79991227389999997" green="0.80005055670000003" blue="0.79990351199999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
 </document>

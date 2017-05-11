@@ -15,6 +15,7 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "EditTimesToEdit", sender: UIBarButtonItem())
     }
+    @IBOutlet var Weekdays: [UIButton]!
     @IBAction func RepeatWeeklyPressed(_ sender: UIButton) {
         if sender.backgroundColor == UIColor(red:0.30, green:0.85, blue:0.39, alpha:1.0) {
             switchColor(isWhite: false, sender: sender)
@@ -32,6 +33,7 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
         // Do any additional setup after loading the view.
         firstPickerView.dataSource = self
         firstPickerView.delegate = self
+//        Weekdays.set
         
     }
 // MARK: - table view setup
@@ -95,10 +97,12 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
     func switchColor(isWhite: Bool, sender: UIButton) {
         if isWhite == true {
             sender.backgroundColor = UIColor(red:0.30, green:0.85, blue:0.39, alpha:1.0)
-            sender.titleLabel?.textColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
+//            sender.titleLabel?.textColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
+            sender.setTitleColor(UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0), for: UIControlState.normal)
         }else if isWhite == false {
             sender.backgroundColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
-            sender.titleLabel?.textColor = UIColor(red:0.30, green:0.85, blue:0.39, alpha:1.0)
+//            sender.titleLabel?.textColor = UIColor(red:0.30, green:0.85, blue:0.39, alpha:1.0)
+            sender.setTitleColor(UIColor(red:0.30, green:0.85, blue:0.39, alpha:1.0), for: UIControlState.normal)
         }
     }
 }
