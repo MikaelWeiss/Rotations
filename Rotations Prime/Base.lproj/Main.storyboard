@@ -51,7 +51,7 @@
                                         <rect key="frame" x="0.0" y="44" width="320" height="224"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pzw-gA-Ccd" id="ku5-c8-Xc0">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="223.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="224"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hio-hx-Twt">
@@ -68,7 +68,7 @@
                                         <rect key="frame" x="0.0" y="268" width="320" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="UkL-Vc-iRI" id="1ON-Jb-yg9">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="299.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekdays" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMQ-5i-O33">
@@ -764,7 +764,7 @@
                             <color key="tintColor" red="0.094934098420000002" green="0.86312454940000005" blue="0.09898183495" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="detailLable" destination="TvJ-3j-uPl" id="ZJ4-Fx-VaU"/>
                         <outlet property="firstPickerView" destination="hio-hx-Twt" id="Tuv-ND-Af3"/>
@@ -862,27 +862,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EiT-QV-siE">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EiT-QV-siE">
                                 <rect key="frame" x="16" y="78" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" label="Enter Name"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tt7-Dt-rY4">
+                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tt7-Dt-rY4">
                                 <rect key="frame" x="0.0" y="116" width="320" height="145"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" label="Name Or Asignment">
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
-                            </pickerView>
-                            <pickerView tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZA0-Sg-XL0">
-                                <rect key="frame" x="0.0" y="269" width="320" height="145"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" label="Pick Previos Name">
-                                    <bool key="isElement" value="YES"/>
-                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="145" id="R4x-SG-MqU"/>
+                                </constraints>
                             </pickerView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k1r-Ia-1zV">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -932,15 +926,33 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZA0-Sg-XL0">
+                                <rect key="frame" x="0.0" y="269" width="320" height="145"/>
+                                <accessibility key="accessibilityConfiguration" label="Pick Previos Name">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="145" id="IWQ-MF-d73"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="EiT-QV-siE" firstAttribute="leading" secondItem="Lia-eW-vif" secondAttribute="leadingMargin" id="1LX-Lh-kzj"/>
                             <constraint firstItem="6Jm-ee-B8f" firstAttribute="top" secondItem="TPm-to-gPK" secondAttribute="bottom" id="2j9-20-uNY"/>
+                            <constraint firstItem="ZA0-Sg-XL0" firstAttribute="leading" secondItem="Lia-eW-vif" secondAttribute="leading" id="6YR-rr-hZr"/>
+                            <constraint firstItem="EiT-QV-siE" firstAttribute="trailing" secondItem="Lia-eW-vif" secondAttribute="trailingMargin" id="8Ig-FA-Au4"/>
+                            <constraint firstAttribute="trailing" secondItem="ZA0-Sg-XL0" secondAttribute="trailing" id="CFh-db-2ez"/>
+                            <constraint firstItem="EiT-QV-siE" firstAttribute="top" secondItem="6Jm-ee-B8f" secondAttribute="bottom" constant="14" id="UHo-PF-j3F"/>
+                            <constraint firstItem="Tt7-Dt-rY4" firstAttribute="top" secondItem="EiT-QV-siE" secondAttribute="bottom" constant="8" id="ZLE-tg-9cc"/>
+                            <constraint firstItem="ZA0-Sg-XL0" firstAttribute="top" secondItem="Tt7-Dt-rY4" secondAttribute="bottom" constant="8" id="ZVo-J0-i6y"/>
+                            <constraint firstItem="Tt7-Dt-rY4" firstAttribute="leading" secondItem="Lia-eW-vif" secondAttribute="leading" id="a2e-pj-UlD"/>
+                            <constraint firstAttribute="trailing" secondItem="Tt7-Dt-rY4" secondAttribute="trailing" id="cV5-4Z-Wim"/>
                             <constraint firstItem="6Jm-ee-B8f" firstAttribute="leading" secondItem="Lia-eW-vif" secondAttribute="leading" id="gkg-0m-q4E"/>
                             <constraint firstAttribute="trailing" secondItem="6Jm-ee-B8f" secondAttribute="trailing" id="yUE-xx-zpp"/>
                         </constraints>
                     </view>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="AsignmentPicker" destination="Tt7-Dt-rY4" id="7PZ-Xc-wZA"/>
                         <outlet property="EnteredObjectTextFeild" destination="EiT-QV-siE" id="z1l-vu-G2S"/>
@@ -1016,7 +1028,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </navigationItem>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="GroupTableView" destination="1fx-wC-EO1" id="hkf-JA-UCZ"/>
                         <outlet property="addButtonO" destination="l9s-7b-hZU" id="Ewl-05-MdO"/>
@@ -1110,6 +1122,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5zy-BV-osm" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ckE-2l-BcM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1129,6 +1142,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="46V-eR-3ad" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4qG-E2-EyC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1147,5 +1161,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="a46-YH-bXz"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.094934098420000002" green="0.86312454940000005" blue="0.09898183495" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" red="0.79991227389999997" green="0.80005055670000003" blue="0.79990351199999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
