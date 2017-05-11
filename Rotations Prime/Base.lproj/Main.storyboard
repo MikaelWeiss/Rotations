@@ -207,8 +207,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="66Y-JF-5Do" userLabel="AM Stack View">
-                                                    <rect key="frame" x="8" y="103.5" width="304" height="60"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="66Y-JF-5Do" userLabel="AM Stack View">
+                                                    <rect key="frame" x="8" y="103.5" width="304" height="65"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ahl-RJ-Zgg">
                                                             <rect key="frame" x="0.0" y="0.0" width="304" height="30"/>
@@ -335,7 +335,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hCG-tL-KwE">
-                                                            <rect key="frame" x="0.0" y="30" width="304" height="30"/>
+                                                            <rect key="frame" x="0.0" y="35" width="304" height="30"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aab-O1-vqr" userLabel="1AM">
                                                                     <rect key="frame" x="0.0" y="0.0" width="30.5" height="30"/>
@@ -461,13 +461,13 @@
                                                     </subviews>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PM:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfF-MN-aGO">
-                                                    <rect key="frame" x="8" y="171" width="300" height="20.5"/>
+                                                    <rect key="frame" x="8" y="176" width="300" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DXg-He-Z40" userLabel="PM Stack View">
-                                                    <rect key="frame" x="8" y="199.5" width="304" height="60"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DXg-He-Z40" userLabel="PM Stack View">
+                                                    <rect key="frame" x="8" y="204.5" width="304" height="65"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="tvr-rd-Dcc">
                                                             <rect key="frame" x="0.0" y="0.0" width="304" height="30"/>
@@ -594,7 +594,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="TK5-hw-Cii">
-                                                            <rect key="frame" x="0.0" y="30" width="304" height="30"/>
+                                                            <rect key="frame" x="0.0" y="35" width="304" height="30"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78c-FX-Lwj" userLabel="1AM">
                                                                     <rect key="frame" x="0.0" y="0.0" width="30.5" height="30"/>
@@ -755,13 +755,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Repeats" id="UHY-0C-xiV">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="f6O-Qr-5KM">
-                            <color key="tintColor" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.094934098420000002" green="0.86312454940000005" blue="0.09898183495" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cancelButton:" destination="QfK-J6-wjn" id="1Oo-Kt-yS4"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="ys1-zp-IgS">
-                            <color key="tintColor" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.094934098420000002" green="0.86312454940000005" blue="0.09898183495" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -833,7 +833,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Rotations" id="85n-zE-lMd">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="HCL-Wa-vKS" userLabel="Edit">
-                            <color key="tintColor" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.094117647058823528" green="0.86274509803921573" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="Edit:" destination="BYZ-38-t0r" id="KKv-Vh-toK"/>
                             </connections>
@@ -884,7 +884,7 @@
                                     <constraint firstAttribute="width" constant="50" id="z8W-LN-UMV"/>
                                 </constraints>
                                 <state key="normal" title="Save">
-                                    <color key="titleColor" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.85125768772469135" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="saveButton:" destination="eIz-gm-FLx" eventType="touchUpInside" id="lWQ-gF-Hbk"/>
@@ -998,7 +998,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Groups" id="hWR-vc-RFz">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="l9s-7b-hZU">
-                            <color key="tintColor" red="0.29819521307945251" green="0.84997797012329102" blue="0.39012432098388672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.094117647058823528" green="0.86274509803921573" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addingButton:" destination="PNI-d4-kls" id="LZd-iy-AcB"/>
                             </connections>
@@ -1079,7 +1079,7 @@
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Repeats" id="Qcg-zx-vWv">
-                                <color key="tintColor" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.094117647058823528" green="0.86274509803921573" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="RepeatsButton:" destination="3Sf-Pf-ARl" id="gV3-U1-4hZ"/>
                                 </connections>
@@ -1136,7 +1136,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2VL-zy-C3i"/>
+        <segue reference="a46-YH-bXz"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.29819521307945251" green="0.84997797012329102" blue="0.39012432098388672" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" red="0.094934098420000002" green="0.86312454940000005" blue="0.09898183495" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
