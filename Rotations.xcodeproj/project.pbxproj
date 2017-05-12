@@ -105,7 +105,7 @@
 		D4FBC4F51E0F62E300D5A088 = {
 			isa = PBXGroup;
 			children = (
-				D4FBC5001E0F62E600D5A088 /* Rotations Prime */,
+				D4FBC5001E0F62E600D5A088 /* Rotations */,
 				D400D30A1EB13680000A723D /* RotationsUITests */,
 				D4FBC4FF1E0F62E600D5A088 /* Products */,
 			);
@@ -120,7 +120,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D4FBC5001E0F62E600D5A088 /* Rotations Prime */ = {
+		D4FBC5001E0F62E600D5A088 /* Rotations */ = {
 			isa = PBXGroup;
 			children = (
 				D40D11641EB36ED7005912C3 /* View */,
@@ -129,7 +129,7 @@
 				D4FBC50A1E0F62E600D5A088 /* LaunchScreen.storyboard */,
 				D40C9A851E6DA14A0043EB2A /* Extras */,
 			);
-			path = "Rotations Prime";
+			path = Rotations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +193,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D4FBC4F91E0F62E300D5A088 /* Build configuration list for PBXProject "Rotations Prime" */;
+			buildConfigurationList = D4FBC4F91E0F62E300D5A088 /* Build configuration list for PBXProject "Rotations" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -412,9 +412,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X7WM6K9T24;
-				INFOPLIST_FILE = "Rotations Prime/Info.plist";
+				INFOPLIST_FILE = Rotations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "MikeStudios.Rotations-Prime";
+				PRODUCT_BUNDLE_IDENTIFIER = MikeStudios.Rotations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -425,9 +425,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X7WM6K9T24;
-				INFOPLIST_FILE = "Rotations Prime/Info.plist";
+				INFOPLIST_FILE = Rotations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "MikeStudios.Rotations-Prime";
+				PRODUCT_BUNDLE_IDENTIFIER = MikeStudios.Rotations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -445,7 +445,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D4FBC4F91E0F62E300D5A088 /* Build configuration list for PBXProject "Rotations Prime" */ = {
+		D4FBC4F91E0F62E300D5A088 /* Build configuration list for PBXProject "Rotations" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D4FBC50E1E0F62E700D5A088 /* Debug */,

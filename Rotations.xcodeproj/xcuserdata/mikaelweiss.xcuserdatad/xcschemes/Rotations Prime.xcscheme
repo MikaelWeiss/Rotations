@@ -17,7 +17,7 @@
                BlueprintIdentifier = "D4FBC4FD1E0F62E400D5A088"
                BuildableName = "Rotations Prime.app"
                BlueprintName = "Rotations Prime"
-               ReferencedContainer = "container:Rotations Prime.xcodeproj">
+               ReferencedContainer = "container:Rotations.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "D400D3081EB13680000A723D"
                BuildableName = "RotationsUITests.xctest"
                BlueprintName = "RotationsUITests"
-               ReferencedContainer = "container:Rotations Prime.xcodeproj">
+               ReferencedContainer = "container:Rotations.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "D4FBC4FD1E0F62E400D5A088"
             BuildableName = "Rotations Prime.app"
             BlueprintName = "Rotations Prime"
-            ReferencedContainer = "container:Rotations Prime.xcodeproj">
+            ReferencedContainer = "container:Rotations.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -68,7 +68,7 @@
             BlueprintIdentifier = "D4FBC4FD1E0F62E400D5A088"
             BuildableName = "Rotations Prime.app"
             BlueprintName = "Rotations Prime"
-            ReferencedContainer = "container:Rotations Prime.xcodeproj">
+            ReferencedContainer = "container:Rotations.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -93,7 +93,7 @@
             BlueprintIdentifier = "D4FBC4FD1E0F62E400D5A088"
             BuildableName = "Rotations Prime.app"
             BlueprintName = "Rotations Prime"
-            ReferencedContainer = "container:Rotations Prime.xcodeproj">
+            ReferencedContainer = "container:Rotations.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
