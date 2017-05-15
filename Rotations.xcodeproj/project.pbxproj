@@ -88,6 +88,7 @@
 		D40C9A851E6DA14A0043EB2A /* Extras */ = {
 			isa = PBXGroup;
 			children = (
+				D4FBC50A1E0F62E600D5A088 /* LaunchScreen.storyboard */,
 				D4FBC5011E0F62E600D5A088 /* AppDelegate.swift */,
 				D4FBC5081E0F62E600D5A088 /* Assets.xcassets */,
 				D4FBC50D1E0F62E700D5A088 /* Info.plist */,
@@ -98,6 +99,7 @@
 		D40D11641EB36ED7005912C3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D4FBC5051E0F62E600D5A088 /* Main.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -125,8 +127,6 @@
 			children = (
 				D40D11641EB36ED7005912C3 /* View */,
 				D40C9A831E6DA10A0043EB2A /* Controlor */,
-				D4FBC5051E0F62E600D5A088 /* Main.storyboard */,
-				D4FBC50A1E0F62E600D5A088 /* LaunchScreen.storyboard */,
 				D40C9A851E6DA14A0043EB2A /* Extras */,
 			);
 			path = Rotations;
