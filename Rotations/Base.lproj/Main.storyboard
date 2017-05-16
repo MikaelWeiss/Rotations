@@ -37,8 +37,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Hourly" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TvJ-3j-uPl">
-                                                    <rect key="frame" x="254.5" y="12" width="50.5" height="20.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Hour" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TvJ-3j-uPl">
+                                                    <rect key="frame" x="267" y="12" width="38" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -51,7 +51,7 @@
                                         <rect key="frame" x="0.0" y="44" width="320" height="224"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pzw-gA-Ccd" id="ku5-c8-Xc0">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="223.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="224"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hio-hx-Twt">
@@ -92,10 +92,10 @@
                                         <rect key="frame" x="0.0" y="312" width="320" height="224"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g2O-Rk-3bB" id="V4y-qq-jW4">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="223.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="224"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="10" translatesAutoresizingMaskIntoConstraints="NO" id="lDQ-fW-NEt">
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="lDQ-fW-NEt">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="224"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="224" id="bGP-MZ-lg9"/>
@@ -103,8 +103,8 @@
                                                     <date key="date" timeIntervalSinceReferenceDate="516546018.356457">
                                                         <!--2017-05-15 13:00:18 +0000-->
                                                     </date>
-                                                    <date key="minimumDate" timeIntervalSinceReferenceDate="284036400">
-                                                        <!--2010-01-01 11:00:00 +0000-->
+                                                    <date key="minimumDate" timeIntervalSinceReferenceDate="441802800">
+                                                        <!--2015-01-01 11:00:00 +0000-->
                                                     </date>
                                                 </datePicker>
                                             </subviews>
@@ -120,7 +120,7 @@
                                         <rect key="frame" x="0.0" y="536" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="UkL-Vc-iRI" id="1ON-Jb-yg9">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekdays" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMQ-5i-O33">

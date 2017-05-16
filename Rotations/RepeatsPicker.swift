@@ -9,7 +9,7 @@
 import UIKit
 
 class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    var chosenInt: Int?
+    var chosenInt = 1
     @IBOutlet weak var firstPickerView: UIPickerView!
     @IBOutlet weak var SecondPicker: UIDatePicker!
     @IBOutlet weak var detailLable: UILabel!
@@ -25,7 +25,8 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
         }
     print("Pressed a repeat button")
     }
-    var myArray = ["Hourly", "Daily", "Weekly", "Monthly"]
+    var myArray = ["Hour", "Day", "Week", "Month"]
+    var whichInMyArray = 1
     var TimesArray = ["1AM","2AM","3AM","4AM","5AM","6AM","7AM","8AM","9AM","10AM","11AM","12AM","1PM","2PM","3PM","4PM","5PM","6PM","7PM","8PM","9PM","10PM","11PM","12PM"]
     var isFirstPickerOpen = false
     var isSecondPickerOpen = false
@@ -62,7 +63,6 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
         }
         
     }
-    // MARK: - work on this: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (indexPath.section == 0 && indexPath.row == 0) {
             isFirst = true
@@ -102,29 +102,28 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
             return myArray[row]
         }
     }
-    // MARK: - work on this: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch component {
         case 0:
             chosenInt = row + 1
-            print(chosenInt!)
+            switchTheDailyOrHour()
         default:
-            switchTheDailyOrHour(what: myArray[row])
+            whichInMyArray = row
+            switchTheDailyOrHour()
         }
     }
+    
 // MARK: - custome functions
-    func switchTheDailyOrHour(what: String) {
-        detailLable.text = what
+    func switchTheDailyOrHour() {
+        detailLable.text = String(String(chosenInt) + " Times Every " + myArray[whichInMyArray])
         
     }
     func switchColor(isWhite: Bool, sender: UIButton) {
         if isWhite == true {
             sender.backgroundColor = UIColor(red:0.30, green:0.85, blue:0.39, alpha:1.0)
-//            sender.titleLabel?.textColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
             sender.setTitleColor(UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0), for: UIControlState.normal)
         }else if isWhite == false {
             sender.backgroundColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
-//            sender.titleLabel?.textColor = UIColor(red:0.30, green:0.85, blue:0.39, alpha:1.0)
             sender.setTitleColor(UIColor(red:0.30, green:0.85, blue:0.39, alpha:1.0), for: UIControlState.normal)
         }
     }
