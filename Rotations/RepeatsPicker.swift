@@ -11,6 +11,7 @@ import UIKit
 class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     var chosenInt: Int?
     @IBOutlet weak var firstPickerView: UIPickerView!
+    @IBOutlet weak var SecondPicker: UIDatePicker!
     @IBOutlet weak var detailLable: UILabel!
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "EditTimesToEdit", sender: UIBarButtonItem())
@@ -26,7 +27,9 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     var myArray = ["Hourly", "Daily", "Weekly", "Monthly"]
     var TimesArray = ["1AM","2AM","3AM","4AM","5AM","6AM","7AM","8AM","9AM","10AM","11AM","12AM","1PM","2PM","3PM","4PM","5PM","6PM","7PM","8PM","9PM","10PM","11PM","12PM"]
-    var isPickerOpen = false
+    var isFirstPickerOpen = false
+    var isSecondPickerOpen = false
+    var isFirst = true
 // MARK: - system stuff
     override func viewDidLoad() {
         
@@ -39,24 +42,41 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
     }
 // MARK: - table view setup
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if (indexPath.section == 0 && indexPath.row == 1) || (indexPath.section == 0 && indexPath.row == 3){
-            if (self.isPickerOpen) {
-                firstPickerView.isHidden = false
-                return 216;
-            } else {
-                firstPickerView.isHidden = true
-                return 0;
-            }
-        } else {
+        switch indexPath.row {
+        case 1:
+                if isFirstPickerOpen {
+                    firstPickerView.isHidden = false
+                    return 216
+                }else {
+                    return 0
+                }
+        case 3:
+                if isSecondPickerOpen {
+                    SecondPicker.isHidden = false
+                    return 216
+                }else {
+                    return 0
+                }
+        default:
             return super.tableView(tableView, heightForRowAt: indexPath)
         }
+        
     }
     // MARK: - work on this: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (indexPath.section == 0 && indexPath.row == 0) {
+            isFirst = true
             tableView.beginUpdates()
             
-            self.isPickerOpen = !self.isPickerOpen // toggle the state
+            self.isFirstPickerOpen = !self.isFirstPickerOpen // toggle the state
+            // this causes the cell height to be re-evaluated and therefore changed based on the new boolean state.
+            super.tableView(tableView, heightForRowAt: indexPath)
+            tableView.endUpdates()
+        }else if (indexPath.section == 0 && indexPath.row == 2) {
+            isFirst = false
+            tableView.beginUpdates()
+            
+            self.isSecondPickerOpen = !self.isSecondPickerOpen // toggle the state
             // this causes the cell height to be re-evaluated and therefore changed based on the new boolean state.
             super.tableView(tableView, heightForRowAt: indexPath)
             tableView.endUpdates()

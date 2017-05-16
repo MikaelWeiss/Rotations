@@ -47,11 +47,11 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="224" id="Pzw-gA-Ccd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="224" id="Pzw-gA-Ccd">
                                         <rect key="frame" x="0.0" y="44" width="320" height="224"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pzw-gA-Ccd" id="ku5-c8-Xc0">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="224"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="223.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hio-hx-Twt">
@@ -88,20 +88,23 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="224" id="g2O-Rk-3bB">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="224" id="g2O-Rk-3bB">
                                         <rect key="frame" x="0.0" y="312" width="320" height="224"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g2O-Rk-3bB" id="V4y-qq-jW4">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="224"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="223.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="lDQ-fW-NEt">
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="10" translatesAutoresizingMaskIntoConstraints="NO" id="lDQ-fW-NEt">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="224"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="224" id="bGP-MZ-lg9"/>
                                                     </constraints>
                                                     <date key="date" timeIntervalSinceReferenceDate="516546018.356457">
                                                         <!--2017-05-15 13:00:18 +0000-->
+                                                    </date>
+                                                    <date key="minimumDate" timeIntervalSinceReferenceDate="284036400">
+                                                        <!--2010-01-01 11:00:00 +0000-->
                                                     </date>
                                                 </datePicker>
                                             </subviews>
@@ -283,6 +286,7 @@
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="SecondPicker" destination="lDQ-fW-NEt" id="6pL-c9-Evb"/>
                         <outlet property="detailLable" destination="TvJ-3j-uPl" id="ZJ4-Fx-VaU"/>
                         <outlet property="firstPickerView" destination="hio-hx-Twt" id="Tuv-ND-Af3"/>
                         <outletCollection property="Weekdays" destination="gGz-MT-Jpk" collectionClass="NSMutableArray" id="Ufp-7r-jKH"/>
