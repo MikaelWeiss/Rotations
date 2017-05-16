@@ -51,6 +51,7 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
             return super.tableView(tableView, heightForRowAt: indexPath)
         }
     }
+    // MARK: - work on this: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (indexPath.section == 0 && indexPath.row == 0) {
             tableView.beginUpdates()
