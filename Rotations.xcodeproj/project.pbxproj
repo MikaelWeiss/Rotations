@@ -11,6 +11,8 @@
 		D42B131C1E97BE38002AA9B1 /* RepeatsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42B131B1E97BE38002AA9B1 /* RepeatsPicker.swift */; };
 		D4872D821E76E00D0077D05F /* addPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4872D811E76E00D0077D05F /* addPersonView.swift */; };
 		D4872D861E78A4A60077D05F /* groupSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4872D851E78A4A60077D05F /* groupSelect.swift */; };
+		D4BF152D1EDA12DF00EE94C1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4BF152C1EDA12DF00EE94C1 /* Media.xcassets */; };
+		D4BF15311EDA75AC00EE94C1 /* EditAllNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BF15301EDA75AC00EE94C1 /* EditAllNames.swift */; };
 		D4E0131D1E93E40F00F2246E /* EditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0131C1E93E40F00F2246E /* EditScreen.swift */; };
 		D4FBC5021E0F62E600D5A088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FBC5011E0F62E600D5A088 /* AppDelegate.swift */; };
 		D4FBC5041E0F62E600D5A088 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FBC5031E0F62E600D5A088 /* MainScreen.swift */; };
@@ -36,6 +38,8 @@
 		D42B131B1E97BE38002AA9B1 /* RepeatsPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatsPicker.swift; sourceTree = "<group>"; };
 		D4872D811E76E00D0077D05F /* addPersonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addPersonView.swift; sourceTree = "<group>"; };
 		D4872D851E78A4A60077D05F /* groupSelect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupSelect.swift; sourceTree = "<group>"; };
+		D4BF152C1EDA12DF00EE94C1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		D4BF15301EDA75AC00EE94C1 /* EditAllNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAllNames.swift; sourceTree = "<group>"; };
 		D4E0131C1E93E40F00F2246E /* EditScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditScreen.swift; sourceTree = "<group>"; };
 		D4FBC4FE1E0F62E600D5A088 /* Rotations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rotations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4FBC5011E0F62E600D5A088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 		D40C9A831E6DA10A0043EB2A /* Controlor */ = {
 			isa = PBXGroup;
 			children = (
+				D4BF15301EDA75AC00EE94C1 /* EditAllNames.swift */,
 				D4872D851E78A4A60077D05F /* groupSelect.swift */,
 				D4FBC5031E0F62E600D5A088 /* MainScreen.swift */,
 				D4872D811E76E00D0077D05F /* addPersonView.swift */,
@@ -90,6 +95,7 @@
 			children = (
 				D4FBC50A1E0F62E600D5A088 /* LaunchScreen.storyboard */,
 				D4FBC5011E0F62E600D5A088 /* AppDelegate.swift */,
+				D4BF152C1EDA12DF00EE94C1 /* Media.xcassets */,
 				D4FBC5081E0F62E600D5A088 /* Assets.xcassets */,
 				D4FBC50D1E0F62E700D5A088 /* Info.plist */,
 			);
@@ -104,12 +110,20 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		D4376CDB1ECB2D910034EC95 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D4FBC4F51E0F62E300D5A088 = {
 			isa = PBXGroup;
 			children = (
 				D4FBC5001E0F62E600D5A088 /* Rotations */,
 				D400D30A1EB13680000A723D /* RotationsUITests */,
 				D4FBC4FF1E0F62E600D5A088 /* Products */,
+				D4376CDB1ECB2D910034EC95 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,6 +205,17 @@
 						DevelopmentTeam = X7WM6K9T24;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -227,6 +252,7 @@
 			files = (
 				D4FBC50C1E0F62E600D5A088 /* LaunchScreen.storyboard in Resources */,
 				D4FBC5091E0F62E600D5A088 /* Assets.xcassets in Resources */,
+				D4BF152D1EDA12DF00EE94C1 /* Media.xcassets in Resources */,
 				D4FBC5071E0F62E600D5A088 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4FBC5041E0F62E600D5A088 /* MainScreen.swift in Sources */,
+				D4BF15311EDA75AC00EE94C1 /* EditAllNames.swift in Sources */,
 				D42B131C1E97BE38002AA9B1 /* RepeatsPicker.swift in Sources */,
 				D4872D821E76E00D0077D05F /* addPersonView.swift in Sources */,
 				D4FBC5021E0F62E600D5A088 /* AppDelegate.swift in Sources */,

@@ -14,7 +14,7 @@ class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     var emptyArray = [""]
     
-    var isAddingGroup = false
+    var isAddingGroup = 1
     
     var whatGroup = ""
 
@@ -23,8 +23,12 @@ class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate 
     @IBOutlet weak var addButtonO: UIBarButtonItem!
 // MARK: - Actions
     @IBAction func addingButton(_ sender: UIBarButtonItem) {
-        isAddingGroup = true
+        isAddingGroup = 1
         performSegue(withIdentifier: "GroupToAdd", sender: UIBarButtonItem())
+    }
+    @IBAction func EditButton(_ sender: UIBarButtonItem) {
+        isAddingGroup = 3
+        performSegue(withIdentifier: "GroupsToEditAllNames", sender: UIBarButtonItem())
     }
     
 // MARK: - Table View Setup
@@ -40,7 +44,7 @@ class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate 
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        isAddingGroup = false
+        isAddingGroup = 2
         whatGroup = theGroups[indexPath.row]
         performSegue(withIdentifier: "GroupToMain", sender: UITableViewCell())
     }
@@ -80,20 +84,24 @@ class groupSelect: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
     }
     
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if isAddingGroup == true {
+        if isAddingGroup == 1 {
             // is in main = false
             let addPerson = segue.destination as! addPersonView
             addPerson.isInMain = false
             
-        }else if isAddingGroup == false {
+        }else if isAddingGroup == 2 {
             
             let mainScreenVar = segue.destination as! mainScreen
             mainScreenVar.whatGroup = whatGroup
-//MARK: there may be a lot of bugs with this.
             mainScreenVar.isAddingName = 2
-            
+        }else if isAddingGroup == 3 {
+            let editAllNamesScreen = segue.destination as! EditAllNames
+            if let names = UserDefaults.standard.object(forKey: "Name") {
+                editAllNamesScreen.allNames = names as! [String]
+            }
         }
     }
     override func viewWillAppear(_ animated: Bool) {

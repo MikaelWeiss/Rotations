@@ -20,6 +20,7 @@ class mainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 // MARK: - Outlet Setup
 
+    @IBOutlet weak var navBarOutlet: UINavigationItem!
     @IBOutlet weak var tableview: UITableView!
 // MARK: - Action Setup
    
@@ -54,7 +55,7 @@ class mainScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
-        
+        navBarOutlet.title = whatGroup
         tableview.allowsSelection = false
         tableview.reloadData()
     }

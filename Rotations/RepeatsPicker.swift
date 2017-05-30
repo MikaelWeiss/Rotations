@@ -26,7 +26,7 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
     print("Pressed a repeat button")
     }
     var myArray = ["Hour", "Day", "Week", "Month"]
-    var whichInMyArray = 1
+    var whichInMyArray = 0
     var TimesArray = ["1AM","2AM","3AM","4AM","5AM","6AM","7AM","8AM","9AM","10AM","11AM","12AM","1PM","2PM","3PM","4PM","5PM","6PM","7PM","8PM","9PM","10PM","11PM","12PM"]
     var isFirstPickerOpen = false
     var isSecondPickerOpen = false
@@ -39,6 +39,7 @@ class RepeatsPicker: UITableViewController, UIPickerViewDelegate, UIPickerViewDa
         firstPickerView.dataSource = self
         firstPickerView.delegate = self
 //        Weekdays.set
+        switchTheDailyOrHour()
         
     }
 // MARK: - table view setup
